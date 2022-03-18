@@ -1,0 +1,3178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
+	<Header>
+		<Application name="JPMML-SkLearn" version="1.6.35"/>
+		<Timestamp>2022-03-18T20:47:09Z</Timestamp>
+	</Header>
+	<MiningBuildTask>
+		<Extension name="repr">PMMLPipeline(steps=[('regressor', DecisionTreeRegressor(random_state=1))])</Extension>
+	</MiningBuildTask>
+	<DataDictionary>
+		<DataField name="SalePrice" optype="continuous" dataType="double"/>
+		<DataField name="Id" optype="continuous" dataType="float"/>
+		<DataField name="MSSubClass" optype="continuous" dataType="float"/>
+		<DataField name="LotFrontage" optype="continuous" dataType="float"/>
+		<DataField name="LotArea" optype="continuous" dataType="float"/>
+		<DataField name="OverallQual" optype="continuous" dataType="float"/>
+		<DataField name="OverallCond" optype="continuous" dataType="float"/>
+		<DataField name="YearBuilt" optype="continuous" dataType="float"/>
+		<DataField name="YearRemodAdd" optype="continuous" dataType="float"/>
+		<DataField name="MasVnrArea" optype="continuous" dataType="float"/>
+		<DataField name="BsmtFinSF1" optype="continuous" dataType="float"/>
+		<DataField name="BsmtFinSF2" optype="continuous" dataType="float"/>
+		<DataField name="BsmtUnfSF" optype="continuous" dataType="float"/>
+		<DataField name="TotalBsmtSF" optype="continuous" dataType="float"/>
+		<DataField name="1stFlrSF" optype="continuous" dataType="float"/>
+		<DataField name="2ndFlrSF" optype="continuous" dataType="float"/>
+		<DataField name="LowQualFinSF" optype="continuous" dataType="float"/>
+		<DataField name="GrLivArea" optype="continuous" dataType="float"/>
+		<DataField name="BsmtFullBath" optype="continuous" dataType="float"/>
+		<DataField name="BsmtHalfBath" optype="continuous" dataType="float"/>
+		<DataField name="FullBath" optype="continuous" dataType="float"/>
+		<DataField name="HalfBath" optype="continuous" dataType="float"/>
+		<DataField name="BedroomAbvGr" optype="continuous" dataType="float"/>
+		<DataField name="KitchenAbvGr" optype="continuous" dataType="float"/>
+		<DataField name="TotRmsAbvGrd" optype="continuous" dataType="float"/>
+		<DataField name="Fireplaces" optype="continuous" dataType="float"/>
+		<DataField name="GarageYrBlt" optype="continuous" dataType="float"/>
+		<DataField name="GarageCars" optype="continuous" dataType="float"/>
+		<DataField name="GarageArea" optype="continuous" dataType="float"/>
+		<DataField name="WoodDeckSF" optype="continuous" dataType="float"/>
+		<DataField name="OpenPorchSF" optype="continuous" dataType="float"/>
+		<DataField name="EnclosedPorch" optype="continuous" dataType="float"/>
+		<DataField name="3SsnPorch" optype="continuous" dataType="float"/>
+		<DataField name="ScreenPorch" optype="continuous" dataType="float"/>
+		<DataField name="PoolArea" optype="continuous" dataType="float"/>
+		<DataField name="MiscVal" optype="continuous" dataType="float"/>
+		<DataField name="MoSold" optype="continuous" dataType="float"/>
+		<DataField name="YrSold" optype="continuous" dataType="float"/>
+	</DataDictionary>
+	<TreeModel functionName="regression" algorithmName="sklearn.tree._classes.DecisionTreeRegressor" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+		<MiningSchema>
+			<MiningField name="SalePrice" usageType="target"/>
+			<MiningField name="OverallQual"/>
+			<MiningField name="GrLivArea"/>
+			<MiningField name="YearBuilt"/>
+			<MiningField name="OverallCond"/>
+			<MiningField name="Id"/>
+			<MiningField name="OpenPorchSF"/>
+			<MiningField name="BsmtFinSF1"/>
+			<MiningField name="YrSold"/>
+			<MiningField name="EnclosedPorch"/>
+			<MiningField name="Fireplaces"/>
+			<MiningField name="TotalBsmtSF"/>
+			<MiningField name="1stFlrSF"/>
+			<MiningField name="TotRmsAbvGrd"/>
+			<MiningField name="GarageArea"/>
+			<MiningField name="MoSold"/>
+			<MiningField name="BedroomAbvGr"/>
+			<MiningField name="LotArea"/>
+			<MiningField name="GarageCars"/>
+			<MiningField name="2ndFlrSF"/>
+			<MiningField name="BsmtUnfSF"/>
+			<MiningField name="MiscVal"/>
+			<MiningField name="YearRemodAdd"/>
+			<MiningField name="MSSubClass"/>
+			<MiningField name="BsmtFinSF2"/>
+			<MiningField name="GarageYrBlt"/>
+			<MiningField name="LotFrontage"/>
+			<MiningField name="ScreenPorch"/>
+			<MiningField name="WoodDeckSF"/>
+			<MiningField name="BsmtFullBath"/>
+			<MiningField name="HalfBath"/>
+			<MiningField name="MasVnrArea"/>
+			<MiningField name="FullBath"/>
+			<MiningField name="BsmtHalfBath"/>
+			<MiningField name="KitchenAbvGr"/>
+			<MiningField name="LowQualFinSF"/>
+			<MiningField name="3SsnPorch"/>
+			<MiningField name="PoolArea"/>
+		</MiningSchema>
+		<LocalTransformations>
+			<DerivedField name="double(OverallQual)" optype="continuous" dataType="double">
+				<FieldRef field="OverallQual"/>
+			</DerivedField>
+			<DerivedField name="double(GrLivArea)" optype="continuous" dataType="double">
+				<FieldRef field="GrLivArea"/>
+			</DerivedField>
+			<DerivedField name="double(YearBuilt)" optype="continuous" dataType="double">
+				<FieldRef field="YearBuilt"/>
+			</DerivedField>
+			<DerivedField name="double(OverallCond)" optype="continuous" dataType="double">
+				<FieldRef field="OverallCond"/>
+			</DerivedField>
+			<DerivedField name="double(Id)" optype="continuous" dataType="double">
+				<FieldRef field="Id"/>
+			</DerivedField>
+			<DerivedField name="double(OpenPorchSF)" optype="continuous" dataType="double">
+				<FieldRef field="OpenPorchSF"/>
+			</DerivedField>
+			<DerivedField name="double(BsmtFinSF1)" optype="continuous" dataType="double">
+				<FieldRef field="BsmtFinSF1"/>
+			</DerivedField>
+			<DerivedField name="double(YrSold)" optype="continuous" dataType="double">
+				<FieldRef field="YrSold"/>
+			</DerivedField>
+			<DerivedField name="double(EnclosedPorch)" optype="continuous" dataType="double">
+				<FieldRef field="EnclosedPorch"/>
+			</DerivedField>
+			<DerivedField name="double(Fireplaces)" optype="continuous" dataType="double">
+				<FieldRef field="Fireplaces"/>
+			</DerivedField>
+			<DerivedField name="double(TotalBsmtSF)" optype="continuous" dataType="double">
+				<FieldRef field="TotalBsmtSF"/>
+			</DerivedField>
+			<DerivedField name="double(1stFlrSF)" optype="continuous" dataType="double">
+				<FieldRef field="1stFlrSF"/>
+			</DerivedField>
+			<DerivedField name="double(TotRmsAbvGrd)" optype="continuous" dataType="double">
+				<FieldRef field="TotRmsAbvGrd"/>
+			</DerivedField>
+			<DerivedField name="double(GarageArea)" optype="continuous" dataType="double">
+				<FieldRef field="GarageArea"/>
+			</DerivedField>
+			<DerivedField name="double(MoSold)" optype="continuous" dataType="double">
+				<FieldRef field="MoSold"/>
+			</DerivedField>
+			<DerivedField name="double(BedroomAbvGr)" optype="continuous" dataType="double">
+				<FieldRef field="BedroomAbvGr"/>
+			</DerivedField>
+			<DerivedField name="double(LotArea)" optype="continuous" dataType="double">
+				<FieldRef field="LotArea"/>
+			</DerivedField>
+			<DerivedField name="double(GarageCars)" optype="continuous" dataType="double">
+				<FieldRef field="GarageCars"/>
+			</DerivedField>
+			<DerivedField name="double(2ndFlrSF)" optype="continuous" dataType="double">
+				<FieldRef field="2ndFlrSF"/>
+			</DerivedField>
+			<DerivedField name="double(BsmtUnfSF)" optype="continuous" dataType="double">
+				<FieldRef field="BsmtUnfSF"/>
+			</DerivedField>
+			<DerivedField name="double(MiscVal)" optype="continuous" dataType="double">
+				<FieldRef field="MiscVal"/>
+			</DerivedField>
+			<DerivedField name="double(YearRemodAdd)" optype="continuous" dataType="double">
+				<FieldRef field="YearRemodAdd"/>
+			</DerivedField>
+			<DerivedField name="double(MSSubClass)" optype="continuous" dataType="double">
+				<FieldRef field="MSSubClass"/>
+			</DerivedField>
+			<DerivedField name="double(BsmtFinSF2)" optype="continuous" dataType="double">
+				<FieldRef field="BsmtFinSF2"/>
+			</DerivedField>
+			<DerivedField name="double(GarageYrBlt)" optype="continuous" dataType="double">
+				<FieldRef field="GarageYrBlt"/>
+			</DerivedField>
+			<DerivedField name="double(LotFrontage)" optype="continuous" dataType="double">
+				<FieldRef field="LotFrontage"/>
+			</DerivedField>
+			<DerivedField name="double(ScreenPorch)" optype="continuous" dataType="double">
+				<FieldRef field="ScreenPorch"/>
+			</DerivedField>
+			<DerivedField name="double(WoodDeckSF)" optype="continuous" dataType="double">
+				<FieldRef field="WoodDeckSF"/>
+			</DerivedField>
+			<DerivedField name="double(BsmtFullBath)" optype="continuous" dataType="double">
+				<FieldRef field="BsmtFullBath"/>
+			</DerivedField>
+			<DerivedField name="double(HalfBath)" optype="continuous" dataType="double">
+				<FieldRef field="HalfBath"/>
+			</DerivedField>
+			<DerivedField name="double(MasVnrArea)" optype="continuous" dataType="double">
+				<FieldRef field="MasVnrArea"/>
+			</DerivedField>
+			<DerivedField name="double(FullBath)" optype="continuous" dataType="double">
+				<FieldRef field="FullBath"/>
+			</DerivedField>
+			<DerivedField name="double(BsmtHalfBath)" optype="continuous" dataType="double">
+				<FieldRef field="BsmtHalfBath"/>
+			</DerivedField>
+			<DerivedField name="double(KitchenAbvGr)" optype="continuous" dataType="double">
+				<FieldRef field="KitchenAbvGr"/>
+			</DerivedField>
+			<DerivedField name="double(LowQualFinSF)" optype="continuous" dataType="double">
+				<FieldRef field="LowQualFinSF"/>
+			</DerivedField>
+			<DerivedField name="double(3SsnPorch)" optype="continuous" dataType="double">
+				<FieldRef field="3SsnPorch"/>
+			</DerivedField>
+			<DerivedField name="double(PoolArea)" optype="continuous" dataType="double">
+				<FieldRef field="PoolArea"/>
+			</DerivedField>
+		</LocalTransformations>
+		<Node score="13.521139497361697">
+			<True/>
+			<Node score="12.154779351142624">
+				<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="0.2898215651512146"/>
+				<Node score="12.246734627249063">
+					<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.5253445506095886"/>
+					<Node score="11.779128505744886">
+						<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.7872074842453003"/>
+						<Node score="11.682668239557323">
+							<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="-0.06772854924201965"/>
+							<Node score="11.002099841204238">
+								<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-1.4886029362678528"/>
+								<Node score="10.460242108190519">
+									<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.20642253756523132"/>
+									<Node score="10.578979797857352">
+										<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="3.2436798810958862"/>
+									</Node>
+								</Node>
+								<Node score="10.868568448579715">
+									<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.6549951732158661"/>
+								</Node>
+							</Node>
+							<Node score="11.681824001432043">
+								<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.23783054947853088"/>
+								<Node score="11.418614785498987">
+									<SimplePredicate field="double(EnclosedPorch)" operator="lessOrEqual" value="0.5817828178405762"/>
+									<Node score="11.112447898373103">
+										<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="-0.17536577582359314"/>
+										<Node score="11.288531131754366">
+											<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.5653325617313385"/>
+											<Node score="11.296012463406655">
+												<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-1.1725202798843384"/>
+												<Node score="11.302204433654575">
+													<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.17201879620552063"/>
+												</Node>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="11.512925464970229">
+										<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-1.1097720563411713"/>
+									</Node>
+								</Node>
+								<Node score="11.477298287327077">
+									<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="-0.17536577582359314"/>
+									<Node score="11.56171562913966">
+										<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-1.6814675331115723"/>
+									</Node>
+									<Node score="11.512925464970229">
+										<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.9887991845607758"/>
+									</Node>
+								</Node>
+								<Node score="11.831379196088763">
+									<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-0.6264065206050873"/>
+								</Node>
+							</Node>
+							<Node score="11.418614785498987">
+								<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.6005396246910095"/>
+								<Node score="11.112447898373103">
+									<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-1.8386617302894592"/>
+									<Node score="11.27720313144916">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-1.1021065413951874"/>
+									</Node>
+									<Node score="10.915088464214607">
+										<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.9435158371925354"/>
+									</Node>
+									<Node score="11.018629143155449">
+										<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-1.241853028535843"/>
+										<Node score="11.002099841204238">
+											<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-1.5991110801696777"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="10.976782033219948">
+									<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-1.7973901629447937"/>
+								</Node>
+								<Node score="11.133128103610641">
+									<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.9719796478748322"/>
+									<Node score="11.26446410567173">
+										<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.19173644483089447"/>
+										<Node score="11.238488619268468">
+											<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="-1.8656136393547058"/>
+										</Node>
+										<Node score="11.289781913656018">
+											<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-0.6264065206050873"/>
+										</Node>
+									</Node>
+									<Node score="11.198214720130528">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.09965229034423828"/>
+									</Node>
+								</Node>
+								<Node score="11.320553572322773">
+									<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="-0.43349379301071167"/>
+									<Node score="11.302204433654575">
+										<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="0.5153855383396149"/>
+									</Node>
+									<Node score="11.326595886778735">
+										<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.09582175314426422"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="11.542484267211773">
+								<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.5776955485343933"/>
+							</Node>
+						</Node>
+						<Node score="11.608235644774552">
+							<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.9974333941936493"/>
+							<Node score="11.27720313144916">
+								<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.9422488808631897"/>
+								<Node score="11.134589024250317">
+									<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="-1.6755863428115845"/>
+								</Node>
+								<Node score="11.356271654924852">
+									<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-1.241853028535843"/>
+									<Node score="11.421906066583059">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.013049691915512085"/>
+										<Node score="11.411446296020374">
+											<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.9642168283462524"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.349229372299439">
+									<SimplePredicate field="double(EnclosedPorch)" operator="lessOrEqual" value="1.9811690002679825"/>
+									<Node score="11.320553572322773">
+										<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.44717347621917725"/>
+									</Node>
+									<Node score="11.344506813345266">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.3381058871746063"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="11.461632170582678">
+								<SimplePredicate field="double(GarageCars)" operator="lessOrEqual" value="-0.3575664907693863"/>
+								<Node score="11.522875795823397">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-1.1502078175544739"/>
+								</Node>
+								<Node score="11.477298287327077">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-1.052158534526825"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="11.283512300642423">
+							<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="-0.05727239325642586"/>
+							<Node score="11.612770799939945">
+								<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.48836472630500793"/>
+								<Node score="11.594321103174222">
+									<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.6297726631164551"/>
+									<Node score="11.288531131754366">
+										<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.16059432365000248"/>
+										<Node score="11.362102575235644">
+											<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.7716920673847198"/>
+											<Node score="11.37366339763672">
+												<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.127366092056036"/>
+											</Node>
+										</Node>
+										<Node score="11.289781913656018">
+											<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.5812780559062958"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.49272275765271">
+									<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-1.2382699251174927"/>
+								</Node>
+								<Node score="11.607326140391713">
+									<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.4358908087015152"/>
+								</Node>
+							</Node>
+							<Node score="11.451050061252142">
+								<SimplePredicate field="double(MiscVal)" operator="lessOrEqual" value="0.9204720556735992"/>
+								<Node score="11.77528972943772">
+									<SimplePredicate field="double(EnclosedPorch)" operator="lessOrEqual" value="2.243042469024658"/>
+									<Node score="11.401669829409995">
+										<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="-1.156809151172638"/>
+										<Node score="11.512925464970229">
+											<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.28421637415885925"/>
+											<Node score="11.635143097694478">
+												<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.7146866917610168"/>
+											</Node>
+											<Node score="11.540307141711446">
+												<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.17261522263288498"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="11.603679828238693">
+										<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.5539315044879913"/>
+										<Node score="11.686878772093667">
+											<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-1.0441105663776398"/>
+											<Node score="11.699405031912846">
+												<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="1.3763556778430939"/>
+											</Node>
+										</Node>
+										<Node score="11.678439903447801">
+											<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="-0.7543205320835114"/>
+										</Node>
+										<Node score="11.570250531589497">
+											<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.933587372303009"/>
+										</Node>
+										<Node score="11.589886506106357">
+											<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-1.1880459785461426"/>
+										</Node>
+										<Node score="11.59910316121128">
+											<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.6975850760936737"/>
+										</Node>
+										<Node score="11.608235644774552">
+											<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.4620063304901123"/>
+										</Node>
+									</Node>
+									<Node score="11.699405031912846">
+										<SimplePredicate field="double(BsmtFinSF2)" operator="lessOrEqual" value="1.590253621339798"/>
+										<Node score="11.652687407345388">
+											<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.1542237550020218"/>
+											<Node score="11.686878772093667">
+												<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="-0.17536577582359314"/>
+											</Node>
+											<Node score="11.635143097694478">
+												<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-2.2515361309051514"/>
+											</Node>
+											<Node score="11.648330101976432">
+												<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.3316104896366596"/>
+											</Node>
+										</Node>
+										<Node score="11.695247021764184">
+											<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.45533978939056363"/>
+											<Node score="11.693161515273161">
+												<SimplePredicate field="double(EnclosedPorch)" operator="lessOrEqual" value="0.5572321563959122"/>
+											</Node>
+										</Node>
+										<Node score="11.703545824578878">
+											<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="1.2806851863861084"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.350406535472453">
+									<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-1.241853028535843"/>
+								</Node>
+								<Node score="11.560762794384388">
+									<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.28153836727142334"/>
+									<Node score="11.512925464970229">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.11270195245742798"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="11.385092093460344">
+								<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.6144385933876038"/>
+							</Node>
+						</Node>
+						<Node score="11.652687407345388">
+							<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.40238653123378754"/>
+							<Node score="11.708492248514204">
+								<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.9202272295951843"/>
+								<Node score="11.740061037553975">
+									<SimplePredicate field="double(ScreenPorch)" operator="lessOrEqual" value="0.29493248462677"/>
+								</Node>
+								<Node score="11.694413341015606">
+									<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="0.09970127791166306"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="11.812289042195847">
+							<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="-0.44934268295764923"/>
+						</Node>
+					</Node>
+					<Node score="11.84939770159144">
+						<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.9541093111038208"/>
+						<Node score="11.225243392518447">
+							<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="0.2229752019047737"/>
+							<Node score="11.884489021402711">
+								<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.07864881865680218"/>
+								<Node score="11.84939770159144">
+									<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.7722160816192627"/>
+									<Node score="11.575900264131617">
+										<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="3.029430389404297"/>
+										<Node score="11.571194373094205">
+											<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-1.182777464389801"/>
+											<Node score="11.603679828238693">
+												<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.6144385933876038"/>
+												<Node score="11.607326140391713">
+													<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-1.439026117324829"/>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="11.344506813345266">
+											<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-1.241853028535843"/>
+											<Node score="11.231887935237117">
+												<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.4358908087015152"/>
+												<Node score="11.302204433654575">
+													<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="-0.5233056098222733"/>
+													<Node score="11.355101379776661">
+														<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.875121533870697"/>
+														<Node score="11.362102575235644">
+															<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="-0.7951514720916748"/>
+														</Node>
+													</Node>
+													<Node score="11.350406535472453">
+														<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.4891100600361824"/>
+													</Node>
+													<Node score="11.314474526246391">
+														<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="0.14392289519309998"/>
+													</Node>
+												</Node>
+											</Node>
+											<Node score="11.429543856031177">
+												<SimplePredicate field="double(BsmtFinSF2)" operator="lessOrEqual" value="1.2584995329380035"/>
+												<Node score="11.48246625748552">
+													<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.3665812164545059"/>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="11.53076538309856">
+											<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="0.3817426860332489"/>
+											<Node score="11.512925464970229">
+												<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.19641520082950592"/>
+												<Node score="11.44571671527678">
+													<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="1.1758915185928345"/>
+													<Node score="11.385092093460344">
+														<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-1.0441105663776398"/>
+														<Node score="11.33857207782545">
+															<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="-0.7951514720916748"/>
+														</Node>
+													</Node>
+													<Node score="11.401993904262946">
+														<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.4519941955804825"/>
+														<Node score="11.379394072345706">
+															<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="-0.21768343448638916"/>
+														</Node>
+													</Node>
+													<Node score="11.439278924801929">
+														<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.06589046865701675"/>
+														<Node score="11.440354772135393">
+															<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="-0.044867247343063354"/>
+														</Node>
+													</Node>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="11.585246126549855">
+											<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.47256042063236237"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.661345470088502">
+									<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.35871343314647675"/>
+									<Node score="11.678439903447801">
+										<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.5242442116141319"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="10.932981961904135">
+								<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="0.7828282713890076"/>
+							</Node>
+						</Node>
+						<Node score="12.065274916913605">
+							<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.48758429288864136"/>
+						</Node>
+						<Node score="11.728036844587175">
+							<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.09600762277841568"/>
+						</Node>
+						<Node score="11.884489021402711">
+							<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="-0.1609502863138914"/>
+						</Node>
+					</Node>
+					<Node score="11.812289042195847">
+						<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.44928017258644104"/>
+						<Node score="11.917723684090689">
+							<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.38132114708423615"/>
+							<Node score="11.761346823468706">
+								<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.4905005246400833"/>
+								<Node score="11.813030057420567">
+									<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.7209659814834595"/>
+									<Node score="11.719126295554126">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.4757208973169327"/>
+										<Node score="11.652687407345388">
+											<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="-0.506423331797123"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.728036844587175">
+									<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.16124097327701747"/>
+									<Node score="11.314474526246391">
+										<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.520152747631073"/>
+										<Node score="11.424094251263613">
+											<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="0.138777494430542"/>
+											<Node score="11.44571671527678">
+												<SimplePredicate field="double(HalfBath)" operator="lessOrEqual" value="0.23298236727714539"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="11.507912923146684">
+										<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.2436225265264511"/>
+										<Node score="11.603679828238693">
+											<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.7669178545475006"/>
+											<Node score="11.566466231898259">
+												<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-1.2532868385314941"/>
+												<Node score="11.544424132029599">
+													<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.5927359461784363"/>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="11.440354772135393">
+											<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="-0.9666710793972015"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.661776411702583">
+									<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="0.09049222152680159"/>
+									<Node score="11.626254150277232">
+										<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.13543284311890602"/>
+										<Node score="11.608235644774552">
+											<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.3559009376913309"/>
+											<Node score="11.589886506106357">
+												<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.23783054947853088"/>
+											</Node>
+											<Node score="11.607326140391713">
+												<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="0.5153855383396149"/>
+											</Node>
+										</Node>
+										<Node score="11.630708500626612">
+											<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-1.1316643357276917"/>
+										</Node>
+									</Node>
+									<Node score="11.635143097694478">
+										<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-1.1079262793064117"/>
+									</Node>
+								</Node>
+								<Node score="11.759785542901755">
+									<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.2733884612098336"/>
+								</Node>
+							</Node>
+							<Node score="11.695247021764184">
+								<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.5022572427988052"/>
+								<Node score="11.385092093460344">
+									<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="-0.9666710793972015"/>
+								</Node>
+								<Node score="11.763684183317412">
+									<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.10978398751467466"/>
+									<Node score="11.801856756822442">
+										<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.2426820769906044"/>
+										<Node score="11.608235644774552">
+											<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="0.14392289519309998"/>
+											<Node score="11.512925464970229">
+												<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.4171605110168457"/>
+												<Node score="11.740061037553975">
+													<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.2473093718290329"/>
+													<Node score="11.608235644774552">
+														<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.5213863849639893"/>
+														<Node score="11.686878772093667">
+															<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.23766247183084488"/>
+															<Node score="11.648330101976432">
+																<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-1.1364234685897827"/>
+																<Node score="11.652687407345388">
+																	<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.13080555479973555"/>
+																</Node>
+															</Node>
+															<Node score="11.67419361256635">
+																<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-0.6264065206050873"/>
+															</Node>
+														</Node>
+													</Node>
+												</Node>
+												<Node score="11.630708500626612">
+													<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="0.5153855383396149"/>
+													<Node score="11.59917655301345">
+														<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.6342950761318207"/>
+														<Node score="11.608235644774552">
+															<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.009643282741308212"/>
+														</Node>
+													</Node>
+												</Node>
+											</Node>
+											<Node score="11.699405031912846">
+												<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.10694757103919983"/>
+												<Node score="11.711776323715394">
+													<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.8841936886310577"/>
+													<Node score="11.678439903447801">
+														<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.9403388500213623"/>
+														<Node score="11.652687407345388">
+															<SimplePredicate field="double(HalfBath)" operator="lessOrEqual" value="0.23298236727714539"/>
+														</Node>
+													</Node>
+													<Node score="11.691071650353702">
+														<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.5110537558794022"/>
+													</Node>
+												</Node>
+												<Node score="11.755871643580617">
+													<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.1543063223361969"/>
+													<Node score="11.763684183317412">
+														<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="0.08312374353408813"/>
+													</Node>
+													<Node score="11.751942365440728">
+														<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.22937174956314266"/>
+													</Node>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="11.77452020265869">
+											<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.9625656604766846"/>
+										</Node>
+									</Node>
+									<Node score="11.872346634576987">
+										<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-1.0441105663776398"/>
+									</Node>
+									<Node score="11.816726919301892">
+										<SimplePredicate field="double(HalfBath)" operator="lessOrEqual" value="0.23298236727714539"/>
+										<Node score="11.818570237796182">
+											<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.652594804763794"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.48246625748552">
+									<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.8731436431407928"/>
+									<Node score="11.458997122944673">
+										<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.14513465762138367"/>
+									</Node>
+								</Node>
+								<Node score="11.619535200028487">
+									<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="0.14392289519309998"/>
+									<Node score="11.635143097694478">
+										<SimplePredicate field="double(GarageCars)" operator="lessOrEqual" value="-0.3575664907693863"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="11.870599909242044">
+								<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.5346716642379761"/>
+								<Node score="11.732060994886899">
+									<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.8374233543872833"/>
+									<Node score="11.695247021764184">
+										<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="-0.0817626416683197"/>
+										<Node score="11.669929213779893">
+											<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.9910466372966766"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.782952602183288">
+									<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="-0.17536577582359314"/>
+									<Node score="11.77528972943772">
+										<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.2179155796766281"/>
+										<Node score="11.76756768334381">
+											<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.04307506466284394"/>
+										</Node>
+										<Node score="11.771436160121729">
+											<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="-0.4967803508043289"/>
+										</Node>
+									</Node>
+									<Node score="11.794337924408413">
+										<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.2599896416068077"/>
+									</Node>
+								</Node>
+								<Node score="11.83862560460953">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.33959123492240906"/>
+								</Node>
+							</Node>
+							<Node score="11.928340903931561">
+								<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-1.035528838634491"/>
+							</Node>
+						</Node>
+						<Node score="11.755871643580617">
+							<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.8841936886310577"/>
+							<Node score="11.691071650353702">
+								<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.5243211984634399"/>
+								<Node score="11.779128505744886">
+									<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.45150552690029144"/>
+								</Node>
+								<Node score="11.665646551987892">
+									<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="-0.44934268295764923"/>
+								</Node>
+								<Node score="11.682668239557323">
+									<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.4358908236026764"/>
+								</Node>
+								<Node score="11.686878772093667">
+									<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.7445248640142381"/>
+								</Node>
+							</Node>
+							<Node score="11.790557201568507">
+								<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="-0.044867247343063354"/>
+							</Node>
+						</Node>
+						<Node score="11.751942365440728">
+							<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.6718445718288422"/>
+							<Node score="11.842229212112828">
+								<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-1.241853028535843"/>
+							</Node>
+							<Node score="11.719939634354555">
+								<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.8186909854412079"/>
+							</Node>
+							<Node score="11.76756768334381">
+								<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.8732777535915375"/>
+								<Node score="11.77452020265869">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.38633565604686737"/>
+									<Node score="11.771436160121729">
+										<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.4822111874818802"/>
+									</Node>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="11.877568578558138">
+							<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.6287582963705063"/>
+							<Node score="11.957611286231675">
+								<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="0.08312373328953981"/>
+								<Node score="11.917723684090689">
+									<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="-0.43349379301071167"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="11.84939770159144">
+							<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.001134567661210572"/>
+							<Node score="11.804848531679264">
+								<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.3521324098110199"/>
+								<Node score="11.77528972943772">
+									<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="0.5153855383396149"/>
+									<Node score="11.786762130599957">
+										<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.42509931325912476"/>
+									</Node>
+								</Node>
+								<Node score="11.79810440720389">
+									<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="1.730156421661377"/>
+								</Node>
+							</Node>
+							<Node score="11.863582336583399">
+								<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.6174755692481995"/>
+							</Node>
+						</Node>
+						<Node score="11.913712983527281">
+							<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.16384971141815186"/>
+							<Node score="11.824079893607152">
+								<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.4460223764181137"/>
+							</Node>
+							<Node score="11.877568578558138">
+								<SimplePredicate field="double(Id)" operator="lessOrEqual" value="1.6762933731079102"/>
+								<Node score="11.856515169360305">
+									<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.05694414861500263"/>
+									<Node score="11.84939770159144">
+										<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="-0.17536577582359314"/>
+									</Node>
+								</Node>
+								<Node score="11.870599909242044">
+									<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.1530374027788639"/>
+									<Node score="11.867097278690842">
+										<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.20031878352165222"/>
+									</Node>
+								</Node>
+								<Node score="11.881034786534624">
+									<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.5041438043117523"/>
+									<Node score="11.884489021402711">
+										<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="-2.901829957962036"/>
+									</Node>
+								</Node>
+								<Node score="11.875830958659597">
+									<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.24877230823040009"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="11.820116003810051">
+							<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="0.30577705800533295"/>
+						</Node>
+					</Node>
+					<Node score="11.344506813345266">
+						<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="-0.43349379301071167"/>
+						<Node score="11.969717200243734">
+							<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="1.2751634120941162"/>
+							<Node score="11.84939770159144">
+								<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.024270961061120033"/>
+								<Node score="11.580584113444043">
+									<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="-0.9666710793972015"/>
+									<Node score="11.498826540590727">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.19218647480010986"/>
+									</Node>
+								</Node>
+								<Node score="11.803353763090035">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.029481935314834118"/>
+									<Node score="11.532728092266408">
+										<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.47298382222652435"/>
+									</Node>
+									<Node score="11.682668239557323">
+										<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="-1.156809151172638"/>
+										<Node score="11.76718001130949">
+											<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.8909386694431305"/>
+											<Node score="11.724805824005728">
+												<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.7766293585300446"/>
+											</Node>
+										</Node>
+										<Node score="11.652687407345388">
+											<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.43376410007476807"/>
+										</Node>
+									</Node>
+									<Node score="11.72399643505017">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.5255470275878906"/>
+										<Node score="11.751942365440728">
+											<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.06589046865701675"/>
+											<Node score="11.77452020265869">
+												<SimplePredicate field="double(HalfBath)" operator="lessOrEqual" value="0.23298236727714539"/>
+												<Node score="11.794337924408413">
+													<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.6741102114319801"/>
+													<Node score="11.786001385032646">
+														<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.28714627772569656"/>
+													</Node>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="11.728036844587175">
+											<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.3001431077718735"/>
+											<Node score="11.732060994886899">
+												<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.09167186915874481"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="11.835008964139341">
+										<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.3429230600595474"/>
+										<Node score="11.884489021402711">
+											<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.597357451915741"/>
+										</Node>
+									</Node>
+									<Node score="11.744037185933616">
+										<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.43504825234413147"/>
+									</Node>
+									<Node score="11.813030057420567">
+										<SimplePredicate field="double(EnclosedPorch)" operator="lessOrEqual" value="1.7029285579919815"/>
+										<Node score="11.809319478024031">
+											<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="-0.449761763215065"/>
+											<Node score="11.809319478024031">
+												<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.20733873918652534"/>
+											</Node>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.824079893607152">
+									<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.15791335329413414"/>
+									<Node score="11.790557201568507">
+										<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="-0.06772854924201965"/>
+										<Node score="11.759785542901755">
+											<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.12751565873622894"/>
+											<Node score="11.728036844587175">
+												<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.5382205247879028"/>
+											</Node>
+											<Node score="11.747997587149712">
+												<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.5587644726037979"/>
+											</Node>
+										</Node>
+										<Node score="11.813030057420567">
+											<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-1.3259671330451965"/>
+										</Node>
+										<Node score="11.794337924408413">
+											<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-1.1806065440177917"/>
+										</Node>
+									</Node>
+									<Node score="11.745425111208464">
+										<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="-1.156809151172638"/>
+										<Node score="11.759785542901755">
+											<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="0.03532549738883972"/>
+										</Node>
+									</Node>
+									<Node score="11.76756768334381">
+										<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-1.3259671330451965"/>
+										<Node score="11.813030057420567">
+											<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.21045148372650146"/>
+										</Node>
+									</Node>
+									<Node score="11.870599909242044">
+										<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="-0.5686000138521194"/>
+										<Node score="11.864462231052837">
+											<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="-0.4248320162296295"/>
+											<Node score="11.845102777308561">
+												<SimplePredicate field="double(BsmtFinSF2)" operator="lessOrEqual" value="2.731239676475525"/>
+												<Node score="11.84939770159144">
+													<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.3041098862886429"/>
+												</Node>
+												<Node score="11.842229212112828">
+													<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.5872365385293961"/>
+												</Node>
+											</Node>
+											<Node score="11.856515169360305">
+												<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.16895710676908493"/>
+											</Node>
+										</Node>
+										<Node score="11.887931365593685">
+											<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.7954830005764961"/>
+											<Node score="11.883799128308773">
+												<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.48912079632282257"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="11.794337924408413">
+										<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.13262662291526794"/>
+									</Node>
+								</Node>
+								<Node score="11.805595078933049">
+									<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.35689668357372284"/>
+									<Node score="11.831379196088763">
+										<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.14617320895195007"/>
+										<Node score="11.83862560460953">
+											<SimplePredicate field="double(BsmtFinSF2)" operator="lessOrEqual" value="0.2694381773471832"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.944707881395766">
+									<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.018655478954315186"/>
+									<Node score="11.964001084330445">
+										<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-0.6264065206050873"/>
+									</Node>
+									<Node score="11.940393392554734">
+										<SimplePredicate field="double(BsmtFinSF2)" operator="lessOrEqual" value="1.782484918832779"/>
+									</Node>
+								</Node>
+								<Node score="11.898187865760873">
+									<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="1.0193427205085754"/>
+								</Node>
+							</Node>
+							<Node score="11.982616545377663">
+								<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.7775811851024628"/>
+								<Node score="11.884489021402711">
+									<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="2.6470665708184242"/>
+									<Node score="11.827736204810263">
+										<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.2966105192899704"/>
+										<Node score="11.786762130599957">
+											<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.20542721822857857"/>
+											<Node score="11.792449349720545">
+												<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="0.5153855383396149"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="11.856515169360305">
+										<SimplePredicate field="double(GarageCars)" operator="lessOrEqual" value="-0.3575664907693863"/>
+										<Node score="11.840789327054841">
+											<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="1.275026023387909"/>
+											<Node score="11.842229212112828">
+												<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.3233335018157959"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="11.917723684090689">
+										<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.29485514014959335"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="12.103486056755072">
+								<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.9332711100578308"/>
+							</Node>
+							<Node score="11.904967552746252">
+								<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.3235170692205429"/>
+								<Node score="11.863582336583399">
+									<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="0.3817426860332489"/>
+								</Node>
+								<Node score="11.898187865760873">
+									<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.555362269282341"/>
+								</Node>
+							</Node>
+							<Node score="11.944707881395766">
+								<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.07613586075603962"/>
+							</Node>
+							<Node score="11.976659481202368">
+								<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="-0.05365581810474396"/>
+							</Node>
+							<Node score="11.970350312009105">
+								<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.6228266060352325"/>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.042965307660024">
+						<SimplePredicate field="double(FullBath)" operator="lessOrEqual" value="-0.11815014481544495"/>
+						<Node score="11.580584113444043">
+							<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.2654709219932556"/>
+							<Node score="11.736069016284437">
+								<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.5881976522505283"/>
+							</Node>
+						</Node>
+						<Node score="11.970350312009105">
+							<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.23370828479528427"/>
+							<Node score="11.842229212112828">
+								<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.041609376668930054"/>
+								<Node score="11.867097278690842">
+									<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.17406843602657318"/>
+									<Node score="11.904967552746252">
+										<SimplePredicate field="double(GarageCars)" operator="lessOrEqual" value="-0.3575664907693863"/>
+										<Node score="11.904967552746252">
+											<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.22955390810966492"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.805595078933049">
+									<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="0.14392289519309998"/>
+									<Node score="11.820410164718188">
+										<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="-0.27330928295850754"/>
+									</Node>
+								</Node>
+								<Node score="11.831379196088763">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.019542694091796875"/>
+								</Node>
+							</Node>
+							<Node score="11.951180395901384">
+								<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.816351592540741"/>
+							</Node>
+							<Node score="11.973509872299472">
+								<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.02110213041305542"/>
+							</Node>
+						</Node>
+						<Node score="11.84939770159144">
+							<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-0.6264065206050873"/>
+							<Node score="11.957611286231675">
+								<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.12909600883722305"/>
+								<Node score="11.951180395901384">
+									<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.06880751252174377"/>
+								</Node>
+							</Node>
+							<Node score="11.896826395162552">
+								<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.8243600726127625"/>
+								<Node score="11.898187865760873">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.1662948615849018"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="11.947949375319936">
+							<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.001134567661210572"/>
+							<Node score="11.867097278690842">
+								<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.2520820200443268"/>
+							</Node>
+							<Node score="11.951180395901384">
+								<SimplePredicate field="double(BsmtHalfBath)" operator="lessOrEqual" value="1.8538741767406464"/>
+							</Node>
+						</Node>
+						<Node score="12.013700752882718">
+							<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.6144385933876038"/>
+							<Node score="11.979799201207037">
+								<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.7849856615066528"/>
+							</Node>
+						</Node>
+						<Node score="12.071969661006694">
+							<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.43634503334760666"/>
+						</Node>
+						<Node score="12.049418835484797">
+							<SimplePredicate field="double(GarageCars)" operator="lessOrEqual" value="0.3117246627807617"/>
+						</Node>
+					</Node>
+					<Node score="11.99535161421452">
+						<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.6574594378471375"/>
+						<Node score="12.061046873479915">
+							<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="1.3564126193523407"/>
+							<Node score="12.133501952695338">
+								<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.5672646909952164"/>
+							</Node>
+							<Node score="12.078239274020289">
+								<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="-0.08135551353916526"/>
+								<Node score="12.086725887897607">
+									<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="-0.37497252225875854"/>
+								</Node>
+							</Node>
+						</Node>
+					</Node>
+				</Node>
+				<Node score="11.982929094215963">
+					<SimplePredicate field="double(GarageCars)" operator="lessOrEqual" value="-0.3575664907693863"/>
+					<Node score="11.585246126549855">
+						<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="-0.9666710793972015"/>
+						<Node score="11.245046019814627">
+							<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="-0.39959388226270676"/>
+							<Node score="11.002099841204238">
+								<SimplePredicate field="double(MiscVal)" operator="lessOrEqual" value="0.36598413065075874"/>
+							</Node>
+						</Node>
+						<Node score="11.678439903447801">
+							<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.1380853746086359"/>
+							<Node score="11.27720313144916">
+								<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-1.6980279088020325"/>
+								<Node score="11.350406535472453">
+									<SimplePredicate field="double(GarageCars)" operator="lessOrEqual" value="-1.6961487531661987"/>
+								</Node>
+							</Node>
+							<Node score="11.424094251263613">
+								<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.8652590811252594"/>
+								<Node score="11.49272275765271">
+									<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="0.23032169789075851"/>
+								</Node>
+								<Node score="11.440354772135393">
+									<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="-0.17536577582359314"/>
+								</Node>
+							</Node>
+							<Node score="11.580584113444043">
+								<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.3416401445865631"/>
+							</Node>
+							<Node score="11.652687407345388">
+								<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.009253308176994324"/>
+								<Node score="11.635143097694478">
+									<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.045935094356536865"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="11.82700601127654">
+							<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.6121495962142944"/>
+							<Node score="11.759785542901755">
+								<SimplePredicate field="double(FullBath)" operator="lessOrEqual" value="-0.11815014481544495"/>
+							</Node>
+							<Node score="11.856515169360305">
+								<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.48611399708897807"/>
+							</Node>
+						</Node>
+						<Node score="11.67419361256635">
+							<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.8724967688322067"/>
+						</Node>
+						<Node score="11.560762794384388">
+							<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="1.527656227350235"/>
+						</Node>
+					</Node>
+					<Node score="11.84939770159144">
+						<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.9506889581680298"/>
+						<Node score="11.401993904262946">
+							<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-1.6515111327171326"/>
+							<Node score="11.573550086786664">
+								<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="-0.43349379301071167"/>
+								<Node score="11.48246625748552">
+									<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.06589046120643616"/>
+									<Node score="11.512925464970229">
+										<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.6661309022456408"/>
+									</Node>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="11.56171562913966">
+							<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.39235250651836395"/>
+							<Node score="11.669929213779893">
+								<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.24923496693372726"/>
+								<Node score="11.652687407345388">
+									<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="0.8312139511108398"/>
+									<Node score="11.626254150277232">
+										<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="-0.1895076334476471"/>
+										<Node score="11.626254150277232">
+											<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.8757544457912445"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.691071650353702">
+									<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.8982324451208115"/>
+								</Node>
+							</Node>
+							<Node score="11.589886506106357">
+								<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.23783054947853088"/>
+							</Node>
+						</Node>
+						<Node score="11.695247021764184">
+							<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.3428512439131737"/>
+							<Node score="11.719939634354555">
+								<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.9799802303314209"/>
+								<Node score="11.728036844587175">
+									<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-1.813950538635254"/>
+								</Node>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.086725887897607">
+						<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-1.6166881918907166"/>
+						<Node score="11.532728092266408">
+							<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.4406590461730957"/>
+							<Node score="11.794337924408413">
+								<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.8542428910732269"/>
+							</Node>
+							<Node score="11.584315461056901">
+								<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-1.408181369304657"/>
+							</Node>
+							<Node score="11.55214617812351">
+								<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.3042478896677494"/>
+								<Node score="11.56171562913966">
+									<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="0.29676324129104614"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="11.982929094215963">
+							<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.16459858790040016"/>
+							<Node score="11.856515169360305">
+								<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="1.2467952221632004"/>
+								<Node score="11.661345470088502">
+									<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.04201595485210419"/>
+									<Node score="11.56171562913966">
+										<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-1.3760386109352112"/>
+										<Node score="11.54829260880752">
+											<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.2847207337617874"/>
+										</Node>
+									</Node>
+									<Node score="11.686878772093667">
+										<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="0.31625620275735855"/>
+										<Node score="11.686878772093667">
+											<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.6408978998661041"/>
+										</Node>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="11.813030057420567">
+								<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="0.5153855383396149"/>
+							</Node>
+						</Node>
+						<Node score="11.79810440720389">
+							<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="0.5153855383396149"/>
+							<Node score="11.84939770159144">
+								<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.11619313806295395"/>
+								<Node score="11.911701584927597">
+									<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.23783054947853088"/>
+									<Node score="11.931635799828413">
+										<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="0.29676324129104614"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="11.77528972943772">
+								<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.5700256824493408"/>
+							</Node>
+							<Node score="11.870599909242044">
+								<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="0.8312139511108398"/>
+								<Node score="11.841415931849784">
+									<SimplePredicate field="double(FullBath)" operator="lessOrEqual" value="-0.11815014481544495"/>
+									<Node score="11.850825253582627">
+										<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.05790674686431885"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="11.827736204810263">
+								<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.1794129554182291"/>
+								<Node score="11.820410164718188">
+									<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="1.4922815933823586"/>
+								</Node>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.016726473799254">
+						<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.6282810866832733"/>
+						<Node score="11.931635799828413">
+							<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.3429230749607086"/>
+							<Node score="11.979385322467598">
+								<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.8302145600318909"/>
+								<Node score="11.876873892875459">
+									<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="0.5153855383396149"/>
+									<Node score="11.813030057420567">
+										<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.03719072416424751"/>
+										<Node score="11.755871643580617">
+											<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-0.010960012674331665"/>
+											<Node score="11.736069016284437">
+												<SimplePredicate field="double(BsmtFinSF2)" operator="lessOrEqual" value="-0.1615321021527052"/>
+												<Node score="11.740061037553975">
+													<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="-0.44934268295764923"/>
+												</Node>
+											</Node>
+											<Node score="11.751942365440728">
+												<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="0.8312139511108398"/>
+												<Node score="11.751942365440728">
+													<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="-0.3371581584215164"/>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="11.813030057420567">
+											<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="0.7769009321928024"/>
+										</Node>
+									</Node>
+									<Node score="11.819674600139235">
+										<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.34810400009155273"/>
+									</Node>
+									<Node score="11.84939770159144">
+										<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="-0.44934268295764923"/>
+									</Node>
+								</Node>
+								<Node score="11.83101549359339">
+									<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-1.4177290201187134"/>
+									<Node score="11.813030057420567">
+										<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-1.6814675331115723"/>
+									</Node>
+								</Node>
+								<Node score="11.898187865760873">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.7409091591835022"/>
+								</Node>
+							</Node>
+							<Node score="11.941944326032129">
+								<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.38771459460258484"/>
+							</Node>
+						</Node>
+						<Node score="12.083905011555967">
+							<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-1.1349753141403198"/>
+							<Node score="12.147913731356642">
+								<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-1.2092772126197815"/>
+							</Node>
+						</Node>
+						<Node score="11.786762130599957">
+							<SimplePredicate field="double(ScreenPorch)" operator="lessOrEqual" value="1.1919814348220825"/>
+							<Node score="11.874090314181814">
+								<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.8327272832393646"/>
+								<Node score="11.848683160653573">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.1939791701734066"/>
+									<Node score="11.884489021402711">
+										<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.7375263720750809"/>
+									</Node>
+									<Node score="11.842229212112828">
+										<SimplePredicate field="double(EnclosedPorch)" operator="lessOrEqual" value="-0.06471727043390274"/>
+									</Node>
+								</Node>
+								<Node score="11.901583454762012">
+									<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.6865060031414032"/>
+								</Node>
+								<Node score="11.886211674714158">
+									<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.09167186170816422"/>
+									<Node score="11.884489021402711">
+										<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="-0.08966544270515442"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="11.951180395901384">
+								<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.5254827737808228"/>
+								<Node score="11.877568578558138">
+									<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.7136727869510651"/>
+									<Node score="11.944707881395766">
+										<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.3625805377960205"/>
+										<Node score="11.938193200374572">
+											<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.43943966925144196"/>
+										</Node>
+									</Node>
+									<Node score="11.842229212112828">
+										<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-1.065709263086319"/>
+									</Node>
+								</Node>
+								<Node score="12.013700752882718">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.1654764823615551"/>
+									<Node score="11.993807212363148">
+										<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="0.397680826485157"/>
+										<Node score="11.982929094215963">
+											<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.7540867328643799"/>
+										</Node>
+										<Node score="11.992260421644849">
+											<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="-0.04486725106835365"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.918390573078392">
+									<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.21961992233991623"/>
+								</Node>
+								<Node score="11.970350312009105">
+									<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.23783054947853088"/>
+									<Node score="11.982929094215963">
+										<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.29466094821691513"/>
+									</Node>
+									<Node score="11.964001084330445">
+										<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.6208909973502159"/>
+									</Node>
+								</Node>
+								<Node score="11.938193200374572">
+									<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.47709523141384125"/>
+								</Node>
+								<Node score="11.964001084330445">
+									<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.3041098788380623"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.083905011555967">
+							<SimplePredicate field="double(ScreenPorch)" operator="lessOrEqual" value="2.699023723602295"/>
+						</Node>
+						<Node score="12.01309450854769">
+							<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.33838479220867157"/>
+						</Node>
+					</Node>
+					<Node score="12.20856952572876">
+						<SimplePredicate field="double(KitchenAbvGr)" operator="lessOrEqual" value="2.05856291949749"/>
+						<Node score="12.323855681186558">
+							<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.24221941828727722"/>
+						</Node>
+						<Node score="12.097930486910471">
+							<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.22823718190193143"/>
+						</Node>
+						<Node score="12.173032791451973">
+							<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.418359637260437"/>
+							<Node score="12.154779351142624">
+								<SimplePredicate field="double(FullBath)" operator="lessOrEqual" value="-0.11815014481544495"/>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="11.890676734510876">
+						<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="1.3910102248191833"/>
+					</Node>
+				</Node>
+				<Node score="12.388394202324129">
+					<SimplePredicate field="double(KitchenAbvGr)" operator="lessOrEqual" value="2.05856291949749"/>
+					<Node score="12.4529327234617">
+						<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="1.034715175628662"/>
+						<Node score="11.94405831982697">
+							<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-1.1806065440177917"/>
+							<Node score="12.01974306733868">
+								<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="-0.17536577582359314"/>
+								<Node score="11.669929213779893">
+									<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="0.22903995588421822"/>
+									<Node score="11.512925464970229">
+										<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.5311327651143074"/>
+										<Node score="11.49272275765271">
+											<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.5178521126508713"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.86005499606543">
+									<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="0.7769009321928024"/>
+									<Node score="11.763684183317412">
+										<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.17264407873153687"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="11.824079893607152">
+								<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="0.8312139511108398"/>
+								<Node score="11.755871643580617">
+									<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.4726482182741165"/>
+									<Node score="11.771436160121729">
+										<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="1.7234156727790833"/>
+										<Node score="11.960811288962345">
+											<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="1.1389357149600983"/>
+											<Node score="11.831379196088763">
+												<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-1.2291107475757599"/>
+												<Node score="11.915051671812877">
+													<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.19660107046365738"/>
+												</Node>
+											</Node>
+											<Node score="12.058152515453552">
+												<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.8746234774589539"/>
+												<Node score="12.025749091398891">
+													<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="-0.5178361162543297"/>
+													<Node score="11.982929094215963">
+														<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.5173033773899078"/>
+														<Node score="12.0015054797889">
+															<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.688147783279419"/>
+														</Node>
+													</Node>
+													<Node score="12.016726473799254">
+														<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="1.3763556778430939"/>
+													</Node>
+													<Node score="12.028738630247258">
+														<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.2508906424045563"/>
+													</Node>
+												</Node>
+												<Node score="12.103486056755072">
+													<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-1.0852942019701004"/>
+												</Node>
+											</Node>
+											<Node score="11.917723684090689">
+												<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.23783054947853088"/>
+											</Node>
+											<Node score="11.967180737247824">
+												<SimplePredicate field="double(ScreenPorch)" operator="lessOrEqual" value="1.6674174070358276"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="11.84939770159144">
+										<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.538801908493042"/>
+									</Node>
+								</Node>
+								<Node score="11.813030057420567">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.21450110524892807"/>
+									<Node score="11.808813773969108">
+										<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-1.1319660767912865"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="12.301382825334498">
+								<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="1.203195959329605"/>
+								<Node score="12.128111104060462">
+									<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="0.6153082251548767"/>
+								</Node>
+								<Node score="12.254862809699606">
+									<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.6256122402846813"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="11.77528972943772">
+							<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-1.8645106554031372"/>
+							<Node score="11.908340237224891">
+								<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="-0.4359119087457657"/>
+								<Node score="11.951180395901384">
+									<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.23783054947853088"/>
+								</Node>
+								<Node score="11.925035115797062">
+									<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.6023568958044052"/>
+								</Node>
+								<Node score="11.898187865760873">
+									<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="0.4113570302724838"/>
+								</Node>
+							</Node>
+							<Node score="11.736069016284437">
+								<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="0.739053875207901"/>
+								<Node score="11.715866308966918">
+									<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.38241777941584587"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.2783933071098">
+							<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="3.4362798929214478"/>
+							<Node score="11.77528972943772">
+								<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-1.3833808302879333"/>
+								<Node score="11.967180737247824">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.9164857268333435"/>
+								</Node>
+								<Node score="11.842229212112828">
+									<SimplePredicate field="double(LowQualFinSF)" operator="lessOrEqual" value="1.1141628809273243"/>
+								</Node>
+								<Node score="11.73526869611367">
+									<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.01394335925579071"/>
+								</Node>
+							</Node>
+							<Node score="11.951180395901384">
+								<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="-0.9666710793972015"/>
+								<Node score="11.608235644774552">
+									<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.7887841761112213"/>
+									<Node score="11.652687407345388">
+										<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="0.23165128380060196"/>
+									</Node>
+								</Node>
+								<Node score="12.031719258385396">
+									<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.041948795318603516"/>
+									<Node score="12.137258329529814">
+										<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-0.6264065206050873"/>
+									</Node>
+									<Node score="12.004568269319446">
+										<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="-1.8656136393547058"/>
+									</Node>
+									<Node score="12.05524975579559">
+										<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="1.61052380874753"/>
+										<Node score="12.043553716032399">
+											<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="0.06822293996810913"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.918390573078392">
+									<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.37318896502256393"/>
+								</Node>
+							</Node>
+							<Node score="12.292250341771226">
+								<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="1.036014437675476"/>
+								<Node score="12.175613438045465">
+									<SimplePredicate field="double(FullBath)" operator="lessOrEqual" value="-0.11815014481544495"/>
+									<Node score="12.061046873479915">
+										<SimplePredicate field="double(BsmtFinSF2)" operator="lessOrEqual" value="2.0832340717315674"/>
+										<Node score="12.031123843065632">
+											<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.9066073894500732"/>
+											<Node score="12.014609430818936">
+												<SimplePredicate field="double(BsmtFinSF2)" operator="lessOrEqual" value="0.04000076651573181"/>
+												<Node score="12.013700752882718">
+													<SimplePredicate field="double(ScreenPorch)" operator="lessOrEqual" value="0.8062503933906555"/>
+													<Node score="11.84939770159144">
+														<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="-0.06772854924201965"/>
+														<Node score="11.951180395901384">
+															<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-1.124649316072464"/>
+														</Node>
+														<Node score="11.870599909242044">
+															<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="0.784885585308075"/>
+															<Node score="11.874090314181814">
+																<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.2508906424045563"/>
+															</Node>
+														</Node>
+													</Node>
+													<Node score="11.979799201207037">
+														<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="1.1332439482212067"/>
+														<Node score="11.941455846009388">
+															<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.9382898807525635"/>
+														</Node>
+														<Node score="11.970350312009105">
+															<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.02543037384748459"/>
+														</Node>
+													</Node>
+												</Node>
+												<Node score="11.976659481202368">
+													<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="0.604486495256424"/>
+												</Node>
+												<Node score="12.049418835484797">
+													<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.25089067220687866"/>
+												</Node>
+											</Node>
+											<Node score="12.072541252905651">
+												<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.23783054947853088"/>
+												<Node score="12.111212364506214">
+													<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.6047670841217041"/>
+												</Node>
+											</Node>
+											<Node score="12.0015054797889">
+												<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.5469011068344116"/>
+												<Node score="11.99535161421452">
+													<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="0.7856455743312836"/>
+												</Node>
+											</Node>
+											<Node score="12.025749091398891">
+												<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="-0.39959390088915825"/>
+											</Node>
+											<Node score="12.034691028774553">
+												<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.4504088908433914"/>
+											</Node>
+										</Node>
+										<Node score="12.193493863323313">
+											<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.2087087333202362"/>
+										</Node>
+										<Node score="12.031719258385396">
+											<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="-0.43349379301071167"/>
+											<Node score="12.043553716032399">
+												<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.4358908236026764"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="12.367340793126296">
+										<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.330218106508255"/>
+									</Node>
+								</Node>
+								<Node score="12.211060187041213">
+									<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="0.14392289519309998"/>
+									<Node score="12.116694834378958">
+										<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.27705347537994385"/>
+										<Node score="11.884489021402711">
+											<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.48631925880908966"/>
+										</Node>
+										<Node score="11.931635799828413">
+											<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.47967587411403656"/>
+											<Node score="12.089538829274222">
+												<SimplePredicate field="double(BsmtFinSF2)" operator="lessOrEqual" value="1.4662333726882935"/>
+												<Node score="11.963567869487337">
+													<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-1.2449736595153809"/>
+													<Node score="11.976030352524807">
+														<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.3220180906355381"/>
+													</Node>
+												</Node>
+												<Node score="12.000891794590137">
+													<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.5005412101745605"/>
+													<Node score="12.043553716032399">
+														<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.2746050953865051"/>
+													</Node>
+													<Node score="11.982929094215963">
+														<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="0.29676324129104614"/>
+													</Node>
+												</Node>
+												<Node score="12.052338545588132">
+													<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="1.3867615461349487"/>
+													<Node score="12.106252310247962">
+														<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="-0.2094603981822729"/>
+														<Node score="12.007560729337492">
+															<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="-0.2817353904247284"/>
+															<Node score="12.066810578196666">
+																<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.06589046865701675"/>
+																<Node score="12.031123843065632">
+																	<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.15186528861522675"/>
+																</Node>
+																<Node score="12.058152515453552">
+																	<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="2.586700737476349"/>
+																	<Node score="12.059803326028716">
+																		<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="1.2557971365749836"/>
+																	</Node>
+																</Node>
+															</Node>
+														</Node>
+														<Node score="12.072541252905651">
+															<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.45307067036628756"/>
+															<Node score="12.077670930725649">
+																<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.4306401312351227"/>
+																<Node score="12.083905011555967">
+																	<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.036100674187764525"/>
+																	<Node score="12.066810578196666">
+																		<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.7734313309192657"/>
+																	</Node>
+																	<Node score="12.078239274020289">
+																		<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-1.037964016199112"/>
+																	</Node>
+																</Node>
+																<Node score="12.049418835484797">
+																	<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.06589046865701675"/>
+																	<Node score="12.031719258385396">
+																		<SimplePredicate field="double(ScreenPorch)" operator="lessOrEqual" value="1.5597715377807617"/>
+																		<Node score="12.034691028774553">
+																			<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.9875053763389587"/>
+																		</Node>
+																	</Node>
+																</Node>
+															</Node>
+															<Node score="12.09458226949681">
+																<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.10751866735517979"/>
+																<Node score="12.086725887897607">
+																	<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="1.0003114938735962"/>
+																	<Node score="12.089538829274222">
+																		<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.10762661322951317"/>
+																	</Node>
+																</Node>
+															</Node>
+															<Node score="12.066235700342375">
+																<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="-0.13830308243632317"/>
+															</Node>
+														</Node>
+														<Node score="12.100156419938624">
+															<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.6144385933876038"/>
+														</Node>
+													</Node>
+													<Node score="12.028738630247258">
+														<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.8477738201618195"/>
+														<Node score="12.017330520933296">
+															<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.6144385933876038"/>
+														</Node>
+													</Node>
+													<Node score="12.043494890772815">
+														<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.0022691339254379272"/>
+														<Node score="12.037653993905211">
+															<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="0.9847523272037506"/>
+														</Node>
+													</Node>
+												</Node>
+												<Node score="12.141534124392603">
+													<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.7021454870700836"/>
+												</Node>
+												<Node score="12.109010932687042">
+													<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.01772204041481018"/>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="12.17921519136029">
+											<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.21551024168729782"/>
+										</Node>
+										<Node score="12.072541252905651">
+											<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.1126073207706213"/>
+										</Node>
+										<Node score="12.103486056755072">
+											<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.8552416265010834"/>
+											<Node score="12.100712129872347">
+												<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.5736350268125534"/>
+											</Node>
+										</Node>
+										<Node score="12.132156962580005">
+											<SimplePredicate field="double(EnclosedPorch)" operator="lessOrEqual" value="0.4508460909128189"/>
+											<Node score="12.128111104060462">
+												<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.4891100525856018"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="12.14950229404178">
+										<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.8019437491893768"/>
+										<Node score="12.089538829274222">
+											<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.08876753761433065"/>
+											<Node score="12.106252310247962">
+												<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.37223711609840393"/>
+											</Node>
+											<Node score="12.095141084822892">
+												<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.016282744240015745"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="12.138863895836725">
+										<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.14617320895195007"/>
+										<Node score="12.154779351142624">
+											<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.9910466372966766"/>
+										</Node>
+										<Node score="12.128111104060462">
+											<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="1.2806851863861084"/>
+										</Node>
+									</Node>
+									<Node score="12.180754837545884">
+										<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.38633565604686737"/>
+									</Node>
+								</Node>
+								<Node score="12.259613412458204">
+									<SimplePredicate field="double(ScreenPorch)" operator="lessOrEqual" value="1.3444797992706299"/>
+									<Node score="12.249610947544657">
+										<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="1.1652889251708984"/>
+										<Node score="12.061046873479915">
+											<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.9396096169948578"/>
+											<Node score="12.136186518066006">
+												<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.2426820769906044"/>
+												<Node score="12.118333731222167">
+													<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.8464800119400024"/>
+													<Node score="12.128111104060462">
+														<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.7333075106143951"/>
+													</Node>
+												</Node>
+												<Node score="12.165250651009918">
+													<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.22697769105434418"/>
+													<Node score="12.193493863323313">
+														<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.27714119851589203"/>
+													</Node>
+													<Node score="12.170445467887022">
+														<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.22934088855981827"/>
+													</Node>
+												</Node>
+											</Node>
+											<Node score="12.185869938212655">
+												<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="-1.6755863428115845"/>
+											</Node>
+											<Node score="12.100712129872347">
+												<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.26834873855113983"/>
+												<Node score="12.106252310247962">
+													<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="-0.3389628939330578"/>
+												</Node>
+												<Node score="12.096257779522967">
+													<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="1.7225009202957153"/>
+												</Node>
+											</Node>
+											<Node score="12.072541252905651">
+												<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.28234805166721344"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="12.229545001715316">
+										<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.6121737062931061"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="12.289954129510877">
+								<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.9487304985523224"/>
+								<Node score="12.345834587905333">
+									<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="0.14392289519309998"/>
+								</Node>
+							</Node>
+							<Node score="12.206072645530174">
+								<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="0.8312139511108398"/>
+								<Node score="12.154779351142624">
+									<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="0.14392289519309998"/>
+								</Node>
+								<Node score="12.195517131590657">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="1.4218751788139343"/>
+									<Node score="12.185869938212655">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="1.1341376304626465"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="12.230765258120545">
+								<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.31090597761794925"/>
+							</Node>
+						</Node>
+						<Node score="12.341258918085241">
+							<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.7331559062004089"/>
+							<Node score="12.388394202324129">
+								<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.2508906349539757"/>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.160028707028767">
+						<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.8309776484966278"/>
+						<Node score="11.970350312009105">
+							<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="1.7552552819252014"/>
+							<Node score="12.037653993905211">
+								<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-1.156379759311676"/>
+							</Node>
+						</Node>
+						<Node score="12.14950229404178">
+							<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.11352743208408356"/>
+						</Node>
+					</Node>
+					<Node score="12.384218830913648">
+						<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="0.8312139511108398"/>
+						<Node score="12.128111104060462">
+							<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.0016216940712183714"/>
+							<Node score="12.206072645530174">
+								<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.10472904145717621"/>
+								<Node score="12.239990863733635">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.17427561432123184"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.259613412458204">
+							<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="1.1218023896217346"/>
+							<Node score="12.287652632522597">
+								<SimplePredicate field="double(ScreenPorch)" operator="lessOrEqual" value="1.4521256685256958"/>
+								<Node score="12.27606501735021">
+									<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.5940331965684891"/>
+								</Node>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.429216196844383">
+						<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="0.5260149836540222"/>
+						<Node score="12.384218830913648">
+							<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="0.14392289519309998"/>
+							<Node score="12.367340793126296">
+								<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="1.1365616917610168"/>
+							</Node>
+							<Node score="12.377922902456833">
+								<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="0.40906545519828796"/>
+							</Node>
+							<Node score="12.388394202324129">
+								<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.6679073870182037"/>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.513557345278134">
+						<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.9567112326622009"/>
+						<Node score="12.524417279788771">
+							<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="1.9437188506126404"/>
+							<Node score="12.531772785169476">
+								<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.688147783279419"/>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.4529327234617">
+						<SimplePredicate field="double(HalfBath)" operator="lessOrEqual" value="0.23298236727714539"/>
+					</Node>
+				</Node>
+				<Node score="11.804848531679264">
+					<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-1.313503086566925"/>
+					<Node score="11.407564949312402">
+						<SimplePredicate field="double(BsmtHalfBath)" operator="lessOrEqual" value="1.8538741767406464"/>
+						<Node score="11.571194373094205">
+							<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-2.647594451904297"/>
+						</Node>
+						<Node score="11.461632170582678">
+							<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="-1.8801245093345642"/>
+						</Node>
+						<Node score="11.37366339763672">
+							<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="1.7287660241127014"/>
+						</Node>
+					</Node>
+				</Node>
+				<Node score="11.870271183889114">
+					<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="1.5924912691116333"/>
+					<Node score="12.144197241812087">
+						<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.23783054947853088"/>
+						<Node score="11.924372644755941">
+							<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="1.814617931842804"/>
+							<Node score="11.827042533619087">
+								<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.36503660678863525"/>
+							</Node>
+							<Node score="11.870599909242044">
+								<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.6324496492743492"/>
+								<Node score="11.884489021402711">
+									<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.2125035896897316"/>
+								</Node>
+								<Node score="11.877568578558138">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.5505111217498779"/>
+								</Node>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="11.84939770159144">
+						<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="2.00314462184906"/>
+						<Node score="11.598726943661342">
+							<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.24754375219345093"/>
+							<Node score="11.626254150277232">
+								<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="1.1078101694583893"/>
+								<Node score="11.744037185933616">
+									<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.35689668357372284"/>
+									<Node score="11.715866308966918">
+										<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-1.6409149765968323"/>
+									</Node>
+									<Node score="11.728036844587175">
+										<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.6233910471200943"/>
+										<Node score="11.732060994886899">
+											<SimplePredicate field="double(GarageCars)" operator="lessOrEqual" value="0.9810157865285873"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="11.685684782260491">
+									<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="1.2686016261577606"/>
+									<Node score="11.686576205316552">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.5492737889289856"/>
+									</Node>
+								</Node>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="11.946654038351252">
+						<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="-0.2903963252902031"/>
+					</Node>
+					<Node score="11.867798786962332">
+						<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.8919397592544556"/>
+					</Node>
+				</Node>
+				<Node score="11.982929094215963">
+					<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.21787867695093155"/>
+				</Node>
+				<Node score="12.206072645530174">
+					<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.47602176666259766"/>
+				</Node>
+			</Node>
+			<Node score="12.8802918162046">
+				<SimplePredicate field="double(GarageCars)" operator="lessOrEqual" value="0.9810157865285873"/>
+				<Node score="12.721885810807203">
+					<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.8251232802867889"/>
+					<Node score="12.8790171187726">
+						<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.7767675518989563"/>
+						<Node score="12.2783933071098">
+							<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.6816429197788239"/>
+							<Node score="11.77528972943772">
+								<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="1.0131369233131409"/>
+								<Node score="11.944707881395766">
+									<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="-0.44934268295764923"/>
+									<Node score="11.900905258737373">
+										<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="-0.530090942978859"/>
+										<Node score="11.891361900690473">
+											<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.4891100600361824"/>
+											<Node score="11.87862357740665">
+												<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="1.0240286886692047"/>
+											</Node>
+										</Node>
+										<Node score="11.925035115797062">
+											<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="0.6061418652534485"/>
+										</Node>
+									</Node>
+									<Node score="11.982272628789678">
+										<SimplePredicate field="double(HalfBath)" operator="lessOrEqual" value="0.23298236727714539"/>
+										<Node score="12.053795210084596">
+											<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="1.048255443572998"/>
+											<Node score="12.0271851854705">
+												<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.3597250208258629"/>
+											</Node>
+											<Node score="12.061046873479915">
+												<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="-0.17536577582359314"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="11.982929094215963">
+										<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-1.8190901279449463"/>
+									</Node>
+								</Node>
+								<Node score="11.951180395901384">
+									<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-1.2678524255752563"/>
+								</Node>
+								<Node score="11.813030057420567">
+									<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.49068211019039154"/>
+									<Node score="11.77528972943772">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.9977089464664459"/>
+									</Node>
+									<Node score="11.831379196088763">
+										<SimplePredicate field="double(EnclosedPorch)" operator="lessOrEqual" value="0.671801820397377"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="12.066810578196666">
+								<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.8059878051280975"/>
+								<Node score="12.043553716032399">
+									<SimplePredicate field="double(FullBath)" operator="lessOrEqual" value="-0.11815014481544495"/>
+								</Node>
+							</Node>
+							<Node score="12.190959007720126">
+								<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.6143116354942318"/>
+								<Node score="12.165250651009918">
+									<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="1.083692193031311"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.394624752074764">
+							<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="0.5417175889015198"/>
+							<Node score="12.040608205802641">
+								<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-1.351237177848816"/>
+								<Node score="11.856515169360305">
+									<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.5340492725372314"/>
+									<Node score="11.790557201568507">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-1.6383306384086609"/>
+										<Node score="11.77452020265869">
+											<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.22935242671519518"/>
+										</Node>
+									</Node>
+									<Node score="11.84939770159144">
+										<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.22730907797813416"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="12.007621706806335">
+								<SimplePredicate field="double(BsmtFinSF2)" operator="lessOrEqual" value="1.0290620923042297"/>
+								<Node score="11.84939770159144">
+									<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.06020055990666151"/>
+									<Node score="12.007621706806335">
+										<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.9819883704185486"/>
+										<Node score="12.043553716032399">
+											<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.7990546226501465"/>
+											<Node score="11.964001084330445">
+												<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.13617799431085587"/>
+												<Node score="11.9891596439666">
+													<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-1.209277257323265"/>
+												</Node>
+												<Node score="11.951180395901384">
+													<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.45555317401885986"/>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="12.141534124392603">
+											<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="1.3763556778430939"/>
+											<Node score="12.206572520571825">
+												<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.11004391685128212"/>
+												<Node score="12.14950229404178">
+													<SimplePredicate field="double(EnclosedPorch)" operator="lessOrEqual" value="-0.03198309242725372"/>
+													<Node score="12.122691036591123">
+														<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="0.9563118815422058"/>
+														<Node score="12.100712129872347">
+															<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="-0.008003294467926025"/>
+														</Node>
+														<Node score="12.122691036591123">
+															<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.414838332682848"/>
+														</Node>
+													</Node>
+													<Node score="12.154516158615772">
+														<SimplePredicate field="double(FullBath)" operator="lessOrEqual" value="-0.11815014481544495"/>
+													</Node>
+												</Node>
+												<Node score="12.188417710291453">
+													<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="0.9122097790241241"/>
+												</Node>
+											</Node>
+											<Node score="12.025749091398891">
+												<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.2995339035987854"/>
+												<Node score="12.061046873479915">
+													<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.2506713718175888"/>
+													<Node score="12.075394321888057">
+														<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="0.12481409311294556"/>
+													</Node>
+												</Node>
+											</Node>
+											<Node score="12.100156419938624">
+												<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="-0.5007709041237831"/>
+												<Node score="12.089538829274222">
+													<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="0.14392289519309998"/>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="12.043553716032399">
+											<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="0.038974255323410034"/>
+										</Node>
+										<Node score="12.0015054797889">
+											<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.10241977125406265"/>
+										</Node>
+									</Node>
+									<Node score="11.931635799828413">
+										<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="1.2672398090362549"/>
+									</Node>
+								</Node>
+								<Node score="12.215032386901646">
+									<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="-0.2712442660704255"/>
+									<Node score="12.299107511497363">
+										<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.02552897110581398"/>
+										<Node score="12.345834587905333">
+											<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.5233994536101818"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="12.103486056755072">
+									<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="2.5185698866844177"/>
+									<Node score="12.190959007720126">
+										<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.47868436574935913"/>
+									</Node>
+									<Node score="12.141534124392603">
+										<SimplePredicate field="double(3SsnPorch)" operator="lessOrEqual" value="8.550447184592485"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="12.384218830913648">
+								<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="1.3763556778430939"/>
+							</Node>
+						</Node>
+						<Node score="12.254862809699606">
+							<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.8943510353565216"/>
+							<Node score="12.123234367221169">
+								<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="0.7825940251350403"/>
+								<Node score="11.910358401381128">
+									<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.4367656111717224"/>
+									<Node score="11.99535161421452">
+										<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.710923358798027"/>
+										<Node score="12.043553716032399">
+											<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.1601554248481989"/>
+											<Node score="12.011880916165731">
+												<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.4135489910840988"/>
+											</Node>
+											<Node score="12.034691028774553">
+												<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="0.8688296973705292"/>
+											</Node>
+										</Node>
+										<Node score="12.00701176473192">
+											<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="0.7918597161769867"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="12.100712129872347">
+									<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.2752300500869751"/>
+								</Node>
+							</Node>
+							<Node score="12.016122061571728">
+								<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.6153505444526672"/>
+								<Node score="12.09884928474215">
+									<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.3571983966976404"/>
+									<Node score="12.146853285870202">
+										<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.18519308418035507"/>
+										<Node score="12.132964173709535">
+											<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="-0.17536577582359314"/>
+											<Node score="12.122147410592412">
+												<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.4358908161520958"/>
+												<Node score="12.117241431823558">
+													<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.4795342111028731"/>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="12.14950229404178">
+											<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="-0.2094603981822729"/>
+										</Node>
+									</Node>
+									<Node score="12.089538829274222">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.4519941955804825"/>
+									</Node>
+									<Node score="12.09815330331068">
+										<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-0.28063297271728516"/>
+									</Node>
+								</Node>
+								<Node score="12.072541252905651">
+									<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="0.4278770685195923"/>
+								</Node>
+							</Node>
+							<Node score="12.136186518066006">
+								<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.0022691339254379272"/>
+								<Node score="12.190959007720126">
+									<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.9205970764160156"/>
+									<Node score="12.198544379109382">
+										<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-1.5332839787006378"/>
+									</Node>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.431533509799543">
+							<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="1.077681839466095"/>
+							<Node score="12.445089546000673">
+								<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="1.2087632417678833"/>
+								<Node score="12.220961258023925">
+									<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="-0.39959390088915825"/>
+									<Node score="12.165250651009918">
+										<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.9548591375350952"/>
+										<Node score="12.206777397134413">
+											<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.7206227481365204"/>
+											<Node score="12.160028707028767">
+												<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="-0.17536577582359314"/>
+												<Node score="12.127570417375216">
+													<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.16459857672452927"/>
+													<Node score="12.111761966058932">
+														<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="0.14392289519309998"/>
+														<Node score="12.089538829274222">
+															<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.4098100960254669"/>
+															<Node score="12.080991165908294">
+																<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.14735926687717438"/>
+															</Node>
+														</Node>
+														<Node score="12.098487434850236">
+															<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.999801903963089"/>
+															<Node score="12.095141084822892">
+																<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-0.010960012674331665"/>
+															</Node>
+														</Node>
+														<Node score="12.106992367829498">
+															<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="-0.2872052490711212"/>
+														</Node>
+													</Node>
+													<Node score="12.128111104060462">
+														<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.3276064991950989"/>
+													</Node>
+												</Node>
+												<Node score="12.139398512262181">
+													<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.4519360810518265"/>
+												</Node>
+											</Node>
+											<Node score="12.142866569626381">
+												<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.7471695013809949"/>
+												<Node score="12.165250651009918">
+													<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.3580184727907181"/>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="12.182804018590819">
+											<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.31753370352089405"/>
+											<Node score="12.175613438045465">
+												<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="1.1669164299964905"/>
+											</Node>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="12.206072645530174">
+									<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="1.73089200258255"/>
+									<Node score="12.218495165528731">
+										<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.45123952627182007"/>
+										<Node score="12.154779351142624">
+											<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.999801903963089"/>
+											<Node score="12.178187442040638">
+												<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.3018732815980911"/>
+												<Node score="12.132695175725399">
+													<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.336067333817482"/>
+													<Node score="12.081076155355488">
+														<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="0.37014987505972385"/>
+														<Node score="12.100712129872347">
+															<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.728410579264164"/>
+															<Node score="12.100712129872347">
+																<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.20555730443447828"/>
+															</Node>
+														</Node>
+													</Node>
+													<Node score="12.141534124392603">
+														<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="-0.49583762884140015"/>
+													</Node>
+												</Node>
+												<Node score="12.144197241812087">
+													<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="-0.2723248824477196"/>
+													<Node score="12.160028707028767">
+														<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="-0.1683557853102684"/>
+													</Node>
+												</Node>
+											</Node>
+											<Node score="12.247694320220994">
+												<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.14090609550476074"/>
+												<Node score="12.26434155365415">
+													<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.22340628504753113"/>
+												</Node>
+											</Node>
+											<Node score="12.188417710291453">
+												<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.777908056974411"/>
+											</Node>
+										</Node>
+										<Node score="12.249610947544657">
+											<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.689926028251648"/>
+											<Node score="12.235388699864227">
+												<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.6026589199900627"/>
+											</Node>
+										</Node>
+										<Node score="12.219309648562168">
+											<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-1.2740437984466553"/>
+										</Node>
+									</Node>
+									<Node score="12.359780370124389">
+										<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="-0.3970164805650711"/>
+										<Node score="12.277928082630602">
+											<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.2504068687558174"/>
+											<Node score="12.30591798049989">
+												<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="0.9516315460205078"/>
+											</Node>
+										</Node>
+										<Node score="12.33138283649562">
+											<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.3156745284795761"/>
+											<Node score="12.323411137947407">
+												<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="1.0841145515441895"/>
+											</Node>
+										</Node>
+										<Node score="12.345834587905333">
+											<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="0.604486495256424"/>
+											<Node score="12.352335152508426">
+												<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.5615447610616684"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="12.220468525813907">
+										<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="0.2919938415288925"/>
+										<Node score="12.154779351142624">
+											<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="0.9169307947158813"/>
+											<Node score="12.178187442040638">
+												<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="1.2686016261577606"/>
+												<Node score="12.195517131590657">
+													<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="-0.0854595978744328"/>
+													<Node score="12.205572520488492">
+														<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.3931133598089218"/>
+													</Node>
+												</Node>
+											</Node>
+											<Node score="12.14950229404178">
+												<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.6625472009181976"/>
+											</Node>
+										</Node>
+										<Node score="12.271392111650817">
+											<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="1.236328125"/>
+										</Node>
+									</Node>
+									<Node score="12.301382825334498">
+										<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.15962081030011177"/>
+										<Node score="12.336552511980964">
+											<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.9510855674743652"/>
+										</Node>
+										<Node score="12.254862809699606">
+											<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="1.4319032430648804"/>
+											<Node score="12.2783933071098">
+												<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="0.6996435821056366"/>
+												<Node score="12.269047444691562">
+													<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.33838479220867157"/>
+												</Node>
+											</Node>
+											<Node score="12.26434155365415">
+												<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="0.7769009321928024"/>
+											</Node>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="12.411052226216713">
+									<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.4928772523999214"/>
+								</Node>
+							</Node>
+							<Node score="12.24288661865289">
+								<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.2657393589615822"/>
+								<Node score="12.33569641332368">
+									<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.8221668303012848"/>
+									<Node score="12.310432660854417">
+										<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.7698797583580017"/>
+										<Node score="12.319401330837177">
+											<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.6831535696983337"/>
+											<Node score="12.321630986164447">
+												<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.08067087084054947"/>
+											</Node>
+										</Node>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="12.345834587905333">
+								<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="0.8204286992549896"/>
+							</Node>
+						</Node>
+						<Node score="12.205572520488492">
+							<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="-1.6755863428115845"/>
+						</Node>
+					</Node>
+					<Node score="11.711776323715394">
+						<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="-1.623438537120819"/>
+					</Node>
+					<Node score="12.406561506279576">
+						<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.35689668357372284"/>
+						<Node score="12.078239274020289">
+							<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.278133362531662"/>
+							<Node score="12.154779351142624">
+								<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="1.2053917050361633"/>
+								<Node score="12.230765258120545">
+									<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.035260770469903946"/>
+									<Node score="12.195517131590657">
+										<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="1.1057077050209045"/>
+									</Node>
+								</Node>
+								<Node score="12.165250651009918">
+									<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.4997776448726654"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.323855681186558">
+							<SimplePredicate field="double(EnclosedPorch)" operator="lessOrEqual" value="3.1759666204452515"/>
+							<Node score="12.328290278254423">
+								<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="1.3450138568878174"/>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.481561937216318">
+						<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="1.4135460257530212"/>
+						<Node score="12.388394202324129">
+							<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.999801903963089"/>
+							<Node score="12.479909311159902">
+								<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.8539690971374512"/>
+								<Node score="12.230765258120545">
+									<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.3510003238916397"/>
+									<Node score="12.363076394339839">
+										<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="1.2129802703857422"/>
+										<Node score="12.2783933071098">
+											<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.2416146993637085"/>
+											<Node score="12.230765258120545">
+												<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="0.14017333835363388"/>
+											</Node>
+											<Node score="12.312682380588432">
+												<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.3041098788380623"/>
+												<Node score="12.323855681186558">
+													<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.9395315945148468"/>
+												</Node>
+											</Node>
+											<Node score="12.299107511497363">
+												<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.25387600413523614"/>
+												<Node score="12.312682380588432">
+													<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="0.968191921710968"/>
+												</Node>
+											</Node>
+											<Node score="12.273731294003989">
+												<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.1397741436958313"/>
+											</Node>
+										</Node>
+										<Node score="12.348006141418841">
+											<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="0.1916171796619892"/>
+										</Node>
+									</Node>
+									<Node score="12.206072645530174">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-1.2242992520332336"/>
+									</Node>
+								</Node>
+								<Node score="12.310432660854417">
+									<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.8786680698394775"/>
+									<Node score="12.339291489316397">
+										<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.6387443840503693"/>
+										<Node score="12.375815420117268">
+											<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="-0.06772854924201965"/>
+											<Node score="12.384218830913648">
+												<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.479037806391716"/>
+											</Node>
+											<Node score="12.371587084007746">
+												<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.17499231547117233"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="12.339291489316397">
+										<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="0.6277572065591812"/>
+									</Node>
+									<Node score="12.299107511497363">
+										<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="1.748497724533081"/>
+									</Node>
+								</Node>
+								<Node score="12.358793732547838">
+									<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-1.7841112613677979"/>
+								</Node>
+								<Node score="12.429216196844383">
+									<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="1.6545426845550537"/>
+									<Node score="12.448626590364206">
+										<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.06589046120643616"/>
+										<Node score="12.441144767709657">
+											<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="1.2686016261577606"/>
+										</Node>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="12.531772785169476">
+								<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="1.06707763671875"/>
+								<Node score="12.50539915757667">
+									<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.044966815039515495"/>
+								</Node>
+								<Node score="12.542544882151386">
+									<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.9090728163719177"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.649154617209645">
+							<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.9265287816524506"/>
+						</Node>
+					</Node>
+					<Node score="12.429216196844383">
+						<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="1.5783081650733948"/>
+						<Node score="12.567237494741757">
+							<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.6521890163421631"/>
+							<Node score="12.468436909997665">
+								<SimplePredicate field="double(ScreenPorch)" operator="lessOrEqual" value="1.425214171409607"/>
+								<Node score="12.493129522588037">
+									<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.09197561442851988"/>
+									<Node score="12.495003937382387">
+										<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="1.3763556778430939"/>
+									</Node>
+								</Node>
+								<Node score="12.45254202214788">
+									<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.2035180628299713"/>
+									<Node score="12.460714863903755">
+										<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="0.8960856199264526"/>
+									</Node>
+								</Node>
+								<Node score="12.468436909997665">
+									<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.9039044082164764"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.367340793126296">
+							<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="0.2064148262143135"/>
+						</Node>
+						<Node score="12.429216196844383">
+							<SimplePredicate field="double(PoolArea)" operator="lessOrEqual" value="6.392391435801983"/>
+						</Node>
+					</Node>
+					<Node score="12.70076888736628">
+						<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.9593425393104553"/>
+					</Node>
+				</Node>
+				<Node score="12.373703486914124">
+					<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.23326901346445084"/>
+					<Node score="12.468436909997665">
+						<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="1.0131369233131409"/>
+						<Node score="11.964001084330445">
+							<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.6762447357177734"/>
+							<Node score="12.106252310247962">
+								<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.3429230749607086"/>
+							</Node>
+						</Node>
+						<Node score="12.363076394339839">
+							<SimplePredicate field="double(Id)" operator="lessOrEqual" value="1.4829205870628357"/>
+							<Node score="12.154779351142624">
+								<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.16124097327701747"/>
+								<Node score="12.27134527214637">
+									<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.23783054947853088"/>
+								</Node>
+								<Node score="12.167851432709975">
+									<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.3523419201374054"/>
+								</Node>
+							</Node>
+							<Node score="12.211060187041213">
+								<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="0.30985939502716064"/>
+								<Node score="12.30591798049989">
+									<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="1.905392825603485"/>
+									<Node score="12.2783933071098">
+										<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.520066887140274"/>
+										<Node score="12.269047444691562">
+											<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="1.4976915419101715"/>
+											<Node score="12.273731294003989">
+												<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.22303125448524952"/>
+											</Node>
+											<Node score="12.269047444691562">
+												<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.8786680996417999"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node score="12.301382825334498">
+										<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.01401066780090332"/>
+									</Node>
+								</Node>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.26434155365415">
+						<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.10009988024830818"/>
+						<Node score="12.323855681186558">
+							<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="0.30985939502716064"/>
+							<Node score="12.3570755190667">
+								<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="1.1670728921890259"/>
+							</Node>
+						</Node>
+						<Node score="12.25247901834433">
+							<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="-0.818704009056091"/>
+						</Node>
+					</Node>
+					<Node score="12.533576212168626">
+						<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.16949597001075745"/>
+						<Node score="12.490875577231112">
+							<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.04575724829919636"/>
+							<Node score="12.520883385370206">
+								<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.24169304966926575"/>
+								<Node score="12.506177237980511">
+									<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.8885200023651123"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.56374708980199">
+							<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="1.050993800163269"/>
+						</Node>
+					</Node>
+					<Node score="12.367340793126296">
+						<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.6844238564372063"/>
+					</Node>
+				</Node>
+				<Node score="12.270220465353926">
+					<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="2.074519395828247"/>
+					<Node score="12.736700896592344">
+						<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.23783054947853088"/>
+						<Node score="12.669998467265833">
+							<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="1.0713339447975159"/>
+							<Node score="12.560244459250788">
+								<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.8719799518585205"/>
+								<Node score="12.394624752074764">
+									<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.3143791565671563"/>
+									<Node score="12.43320821811392">
+										<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="-0.17536577582359314"/>
+										<Node score="12.468436909997665">
+											<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="-0.1609502900391817"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="12.498742259492994">
+									<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.17954103648662567"/>
+									<Node score="12.478006361013815">
+										<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.6208909973502159"/>
+									</Node>
+								</Node>
+								<Node score="12.524526376648708">
+									<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="1.9999033212661743"/>
+								</Node>
+							</Node>
+							<Node score="12.591335046320818">
+								<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="1.374794602394104"/>
+								<Node score="12.618182296357007">
+									<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="-0.44934268295764923"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.614865543731012">
+							<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.901615709066391"/>
+							<Node score="12.66032791780777">
+								<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="0.14392289519309998"/>
+							</Node>
+						</Node>
+						<Node score="12.791356180214175">
+							<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.49040716141462326"/>
+						</Node>
+					</Node>
+					<Node score="12.567237494741757">
+						<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="-0.44934268295764923"/>
+						<Node score="12.675763725937609">
+							<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-1.2705663442611694"/>
+						</Node>
+						<Node score="12.491251587763836">
+							<SimplePredicate field="double(OverallCond)" operator="lessOrEqual" value="-0.06772854924201965"/>
+							<Node score="12.524526376648708">
+								<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="0.23915036022663116"/>
+							</Node>
+						</Node>
+						<Node score="12.57418196709457">
+							<SimplePredicate field="double(EnclosedPorch)" operator="lessOrEqual" value="1.0646119266748428"/>
+						</Node>
+					</Node>
+					<Node score="12.396693005138824">
+						<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.45393314957618713"/>
+						<Node score="12.535376392672774">
+							<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.6848540008068085"/>
+							<Node score="12.404923504275338">
+								<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="-0.5022572502493858"/>
+							</Node>
+							<Node score="12.477167914377556">
+								<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.7450192868709564"/>
+								<Node score="12.46997418931655">
+									<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="1.2199330627918243"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.354492650648448">
+							<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.9271216094493866"/>
+							<Node score="12.345834587905333">
+								<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="2.473674714565277"/>
+							</Node>
+						</Node>
+						<Node score="12.388394202324129">
+							<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="1.0240286886692047"/>
+						</Node>
+					</Node>
+					<Node score="12.190959007720126">
+						<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.4183596298098564"/>
+						<Node score="12.100712129872347">
+							<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="0.7065864652395248"/>
+						</Node>
+					</Node>
+					<Node score="12.323411137947407">
+						<SimplePredicate field="double(BsmtFinSF2)" operator="lessOrEqual" value="3.205616980791092"/>
+					</Node>
+				</Node>
+				<Node score="12.751299696013497">
+					<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="-0.059195756912231445"/>
+					<Node score="12.66539442642905">
+						<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.2582392990589142"/>
+					</Node>
+					<Node score="12.721885810807203">
+						<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="1.0131369233131409"/>
+					</Node>
+				</Node>
+			</Node>
+			<Node score="13.195613839143922">
+				<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="1.7364522814750671"/>
+				<Node score="12.524162674153336">
+					<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.8633846640586853"/>
+					<Node score="12.450977688625896">
+						<SimplePredicate field="double(BsmtFullBath)" operator="lessOrEqual" value="0.14392289519309998"/>
+						<Node score="11.898187865760873">
+							<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="-0.44934268295764923"/>
+							<Node score="12.077670930725649">
+								<SimplePredicate field="double(OverallQual)" operator="lessOrEqual" value="1.0131369233131409"/>
+								<Node score="12.175613438045465">
+									<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.37715114653110504"/>
+									<Node score="12.17664898415669">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.2515033185482025"/>
+									</Node>
+								</Node>
+								<Node score="12.058152515453552">
+									<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.11045330762863159"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.211060187041213">
+							<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="-0.3874223530292511"/>
+							<Node score="12.049418835484797">
+								<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.46504388749599457"/>
+							</Node>
+							<Node score="12.297785453453374">
+								<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="1.048255443572998"/>
+							</Node>
+						</Node>
+						<Node score="12.230765258120545">
+							<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="-0.010960012674331665"/>
+							<Node score="12.200557464842063">
+								<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="1.8479301929473877"/>
+							</Node>
+						</Node>
+						<Node score="12.384218830913648">
+							<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="1.176751971244812"/>
+							<Node score="12.437184366493561">
+								<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="1.1253825426101685"/>
+								<Node score="12.345834587905333">
+									<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.7367904484272003"/>
+								</Node>
+								<Node score="12.429216196844383">
+									<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="0.999801903963089"/>
+								</Node>
+							</Node>
+							<Node score="12.567551034433226">
+								<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.01735564135015011"/>
+								<Node score="12.506177237980511">
+									<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.3321814388036728"/>
+								</Node>
+								<Node score="12.540757571577291">
+									<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.9661486446857452"/>
+								</Node>
+							</Node>
+							<Node score="12.504323669331189">
+								<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="1.3608916401863098"/>
+								<Node score="12.454103912352162">
+									<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.48360195755958557"/>
+								</Node>
+								<Node score="12.491251587763836">
+									<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="1.1209356784820557"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node score="12.332705296463539">
+							<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="2.3856064081192017"/>
+							<Node score="12.367885325692589">
+								<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="0.7219362854957581"/>
+								<Node score="12.354492650648448">
+									<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="1.1879180669784546"/>
+									<Node score="12.354492650648448">
+										<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.6144385933876038"/>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="12.308177868467327">
+								<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.9910466372966766"/>
+							</Node>
+						</Node>
+						<Node score="12.41044104151805">
+							<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="1.4047504663467407"/>
+							<Node score="12.422505731952896">
+								<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="0.5153855383396149"/>
+								<Node score="12.428015476267865">
+									<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="1.4024933576583862"/>
+									<Node score="12.429216196844383">
+										<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.11910970509052277"/>
+									</Node>
+								</Node>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.237086699059343">
+						<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="0.8278790414333344"/>
+						<Node score="12.415433652431746">
+							<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.18054752051830325"/>
+							<Node score="12.367340793126296">
+								<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.21573850512504578"/>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.588190652108505">
+						<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="1.4173147678375244"/>
+						<Node score="12.464583340681674">
+							<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="1.048255443572998"/>
+							<Node score="12.345834587905333">
+								<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.8591103926301003"/>
+							</Node>
+							<Node score="12.506177237980511">
+								<SimplePredicate field="double(LotFrontage)" operator="lessOrEqual" value="0.7698797583580017"/>
+								<Node score="12.485827127509431">
+									<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="-0.2590881958603859"/>
+								</Node>
+								<Node score="12.509874099861838">
+									<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.9908913522958755"/>
+								</Node>
+							</Node>
+							<Node score="12.449018824140563">
+								<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.6809571236371994"/>
+							</Node>
+							<Node score="12.476099782743233">
+								<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="-0.17753596603870392"/>
+							</Node>
+						</Node>
+						<Node score="12.552926520261092">
+							<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.604612797498703"/>
+						</Node>
+						<Node score="12.596400426884427">
+							<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.23326901346445084"/>
+						</Node>
+					</Node>
+					<Node score="12.672946381766982">
+						<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="0.10246318578720093"/>
+						<Node score="12.601487417784837">
+							<SimplePredicate field="double(TotalBsmtSF)" operator="lessOrEqual" value="1.5005425810813904"/>
+							<Node score="12.631340380934517">
+								<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-1.1317650079727173"/>
+							</Node>
+						</Node>
+						<Node score="12.652359748158593">
+							<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.5664117336273193"/>
+							<Node score="12.650348126203179">
+								<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.1359684094786644"/>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.556729517143344">
+						<SimplePredicate field="double(ScreenPorch)" operator="lessOrEqual" value="1.2547749280929565"/>
+						<Node score="12.542544882151386">
+							<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="0.3618399500846863"/>
+						</Node>
+					</Node>
+				</Node>
+				<Node score="12.736700896592344">
+					<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.6012940406799316"/>
+					<Node score="12.323855681186558">
+						<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="0.7529070973396301"/>
+						<Node score="12.468436909997665">
+							<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.3041098788380623"/>
+							<Node score="12.491172637278908">
+								<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="0.13470226526260376"/>
+							</Node>
+						</Node>
+						<Node score="12.380025952653611">
+							<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="-0.4311668276786804"/>
+						</Node>
+						<Node score="12.337100907936577">
+							<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="1.654542624950409"/>
+						</Node>
+					</Node>
+					<Node score="12.662706040212738">
+						<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="0.790232390165329"/>
+						<Node score="12.421184025147118">
+							<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.19115609303116798"/>
+							<Node score="12.546109948315882">
+								<SimplePredicate field="double(BedroomAbvGr)" operator="lessOrEqual" value="0.7769009321928024"/>
+								<Node score="12.526342907575106">
+									<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="0.15611060708761215"/>
+								</Node>
+								<Node score="12.542544882151386">
+									<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="2.57781720161438"/>
+								</Node>
+							</Node>
+							<Node score="12.429216196844383">
+								<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="1.8871387243270874"/>
+							</Node>
+						</Node>
+						<Node score="12.577636201962656">
+							<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="1.4972978234291077"/>
+						</Node>
+					</Node>
+					<Node score="12.666657052859417">
+						<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="0.22350134700536728"/>
+						<Node score="12.577636201962656">
+							<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="1.4294556975364685"/>
+							<Node score="12.560244459250788">
+								<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.5567261129617691"/>
+							</Node>
+						</Node>
+						<Node score="12.73596533201339">
+							<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="1.4468603134155273"/>
+						</Node>
+					</Node>
+					<Node score="12.799175708864519">
+						<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="-0.11654934287071228"/>
+					</Node>
+					<Node score="12.727838209334498">
+						<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.6140612214803696"/>
+					</Node>
+				</Node>
+				<Node score="12.528156144699286">
+					<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.27272137999534607"/>
+					<Node score="12.959538518762063">
+						<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.6741102337837219"/>
+						<Node score="12.820987977820545">
+							<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="1.1253825426101685"/>
+						</Node>
+					</Node>
+					<Node score="12.759957758756611">
+						<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="0.604486495256424"/>
+						<Node score="12.827992316801751">
+							<SimplePredicate field="double(MSSubClass)" operator="lessOrEqual" value="-0.39959390088915825"/>
+						</Node>
+					</Node>
+					<Node score="12.676076274775909">
+						<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="1.3186671733856201"/>
+						<Node score="12.631013530138995">
+							<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="0.6285561323165894"/>
+							<Node score="12.628067055589549">
+								<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="0.7330161333084106"/>
+							</Node>
+						</Node>
+						<Node score="12.693498620467778">
+							<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="1.8353794813156128"/>
+						</Node>
+					</Node>
+				</Node>
+				<Node score="12.850554654108839">
+					<SimplePredicate field="double(TotRmsAbvGrd)" operator="lessOrEqual" value="3.066272497177124"/>
+					<Node score="12.994530005894443">
+						<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="1.3064002394676208"/>
+						<Node score="12.955127458028414">
+							<SimplePredicate field="double(WoodDeckSF)" operator="lessOrEqual" value="1.011649340391159"/>
+						</Node>
+					</Node>
+					<Node score="12.904207367601158">
+						<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="2.7800251245498657"/>
+						<Node score="12.92391243868049">
+							<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.4891100376844406"/>
+						</Node>
+						<Node score="12.886641043883259">
+							<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="0.0779312252998352"/>
+						</Node>
+					</Node>
+				</Node>
+			</Node>
+			<Node score="12.126758838810447">
+				<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="3.024911403656006"/>
+				<Node score="13.275827535915461">
+					<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="4.458143472671509"/>
+					<Node score="13.323926946863102">
+						<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="2.0922054052352905"/>
+						<Node score="13.049792684569493">
+							<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="3.411312699317932"/>
+							<Node score="12.793859310432293">
+								<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="1.8716427683830261"/>
+								<Node score="12.721885810807203">
+									<SimplePredicate field="double(1stFlrSF)" operator="lessOrEqual" value="1.9429756999015808"/>
+									<Node score="12.560244459250788">
+										<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.31893427670001984"/>
+									</Node>
+									<Node score="12.65395846952229">
+										<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="0.06589046865701675"/>
+										<Node score="12.676076274775909">
+											<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="0.5153855383396149"/>
+											<Node score="12.691580461311874">
+												<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="1.13379567861557"/>
+												<Node score="12.694652660348845">
+													<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-0.6741102114319801"/>
+												</Node>
+											</Node>
+										</Node>
+										<Node score="12.676076274775909">
+											<SimplePredicate field="double(MoSold)" operator="lessOrEqual" value="-1.4141108989715576"/>
+										</Node>
+										<Node score="12.644327576461329">
+											<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="-0.39219899475574493"/>
+										</Node>
+										<Node score="12.66032791780777">
+											<SimplePredicate field="double(2ndFlrSF)" operator="lessOrEqual" value="-0.019461214542388916"/>
+										</Node>
+									</Node>
+									<Node score="12.751299696013497">
+										<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="1.048255443572998"/>
+										<Node score="12.7444443677961">
+											<SimplePredicate field="double(BsmtFinSF1)" operator="lessOrEqual" value="0.12141960859298706"/>
+										</Node>
+									</Node>
+									<Node score="12.729320789294722">
+										<SimplePredicate field="double(Id)" operator="lessOrEqual" value="0.7034975290298462"/>
+									</Node>
+								</Node>
+								<Node score="12.864240107194092">
+									<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="1.4092560410499573"/>
+									<Node score="12.84397135185964">
+										<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="1.3126514256000519"/>
+										<Node score="12.841129801965447">
+											<SimplePredicate field="double(GarageArea)" operator="lessOrEqual" value="1.1136390566825867"/>
+										</Node>
+									</Node>
+								</Node>
+							</Node>
+							<Node score="12.88712700173598">
+								<SimplePredicate field="double(OpenPorchSF)" operator="lessOrEqual" value="1.7414150536060333"/>
+								<Node score="12.813917896253697">
+									<SimplePredicate field="double(GrLivArea)" operator="lessOrEqual" value="0.5740264058113098"/>
+									<Node score="12.841325847671216">
+										<SimplePredicate field="double(HalfBath)" operator="lessOrEqual" value="0.23298236727714539"/>
+										<Node score="12.832011076396668">
+											<SimplePredicate field="double(YrSold)" operator="lessOrEqual" value="-0.23783054947853088"/>
+										</Node>
+									</Node>
+								</Node>
+								<Node score="12.86099861326992">
+									<SimplePredicate field="double(YearBuilt)" operator="lessOrEqual" value="1.216597557067871"/>
+								</Node>
+								<Node score="12.906346868281233">
+									<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="1.239920973777771"/>
+								</Node>
+								<Node score="12.885202034321916">
+									<SimplePredicate field="double(Id)" operator="lessOrEqual" value="-0.11151561141014099"/>
+								</Node>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="12.929991484756872">
+						<SimplePredicate field="double(BsmtUnfSF)" operator="lessOrEqual" value="2.2746752500534058"/>
+						<Node score="13.053013299269535">
+							<SimplePredicate field="double(GarageYrBlt)" operator="lessOrEqual" value="0.9794663190841675"/>
+							<Node score="13.071070083016778">
+								<SimplePredicate field="double(MasVnrArea)" operator="lessOrEqual" value="1.3784194886684418"/>
+							</Node>
+						</Node>
+						<Node score="13.008659261632127">
+							<SimplePredicate field="double(Fireplaces)" operator="lessOrEqual" value="1.3763556778430939"/>
+							<Node score="12.991753427493052">
+								<SimplePredicate field="double(LotArea)" operator="lessOrEqual" value="0.3806604892015457"/>
+							</Node>
+						</Node>
+					</Node>
+					<Node score="13.229567991666638">
+						<SimplePredicate field="double(YearRemodAdd)" operator="lessOrEqual" value="1.0967089533805847"/>
+					</Node>
+				</Node>
+			</Node>
+			<Node score="13.345506928718539">
+				<SimplePredicate field="double(Id)" operator="lessOrEqual" value="1.0582121014595032"/>
+			</Node>
+		</Node>
+	</TreeModel>
+</PMML>

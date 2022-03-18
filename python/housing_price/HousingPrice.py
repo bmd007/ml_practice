@@ -124,20 +124,20 @@ if __name__ == '__main__':
     # In[56]:
 
 
-    plt.hist(features_nonnumeric['Street'])
+    # plt.hist(features_nonnumeric['Street'])
 
 
     # In[57]:
 
 
-    features_numeric.hist(bins=30,figsize=(20,20))
-    plt.show()
+    # features_numeric.hist(bins=30,figsize=(20,20))
+    # plt.show()
 
 
     # In[58]:
 
 
-    plt.hist(features_nonnumeric.MSZoning)
+    # plt.hist(features_nonnumeric.MSZoning)
 
 
     # ### Data cleaning
@@ -241,6 +241,7 @@ if __name__ == '__main__':
 
     # prediction
     Y_pre = model.predict(X_valid)
+    print("BMD::X_Valid\n", X_valid.iloc[0])
     Y_pre
 
 
@@ -263,5 +264,5 @@ if __name__ == '__main__':
     pipeline.fit(X_train, Y_train)
     Y_pre = pipeline.predict(X_valid)
     Y_pre
-    sklearn2pmml(pipeline, 'housing_price_model.pmml', with_repr=True, debug=True)
+    sklearn2pmml(pipeline, 'model.pmml', with_repr=True, debug=True)
 
