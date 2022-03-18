@@ -19,7 +19,7 @@ public class PythonToJavaApplication {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void start() {
-		final Model model = Model.fromFile("model.pmml");
+		final Model model = Model.fromFile("python/model.pmml");
 		Map<String, Double> values = Map.of(
 				"age", 0.01809694d,
 				"sex", 0.00301924d,

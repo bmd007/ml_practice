@@ -16,4 +16,4 @@ if __name__ == '__main__':
     pipeline.predict([[0.01809694, 0.00301924, 0.00511107, -0.00222774, -0.02633611, -0.02699205, 0.01550536,
                        -0.02104282, -0.02421066, -0.05492509]])[0]
 
-    sklearn2pmml(pipeline, '/model.pmml', with_repr=True)
+    sklearn2pmml(pipeline, 'model.pmml', with_repr=True, debug=True)
