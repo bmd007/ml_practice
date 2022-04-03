@@ -2,7 +2,7 @@
 <PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
 	<Header>
 		<Application name="JPMML-SkLearn" version="1.6.35"/>
-		<Timestamp>2022-04-02T19:59:57Z</Timestamp>
+		<Timestamp>2022-04-03T10:56:26Z</Timestamp>
 	</Header>
 	<MiningBuildTask>
 		<Extension name="repr">PMMLPipeline(steps=[('scaler', StandardScaler()),
@@ -70,23 +70,23 @@
 				</Apply>
 			</DerivedField>
 		</LocalTransformations>
-		<RegressionTable intercept="-0.20531680969927937" targetCategory="0">
-			<NumericPredictor name="standardScaler(sepal length (cm))" coefficient="-1.0740414858360163"/>
-			<NumericPredictor name="standardScaler(sepal width (cm))" coefficient="1.1600634216479504"/>
-			<NumericPredictor name="standardScaler(petal length (cm))" coefficient="-1.9306286585787182"/>
-			<NumericPredictor name="standardScaler(petal width (cm))" coefficient="-1.8116887259627765"/>
+		<RegressionTable intercept="-0.20531680969927826" targetCategory="0">
+			<NumericPredictor name="standardScaler(sepal length (cm))" coefficient="-1.0740414858360157"/>
+			<NumericPredictor name="standardScaler(sepal width (cm))" coefficient="1.1600634216479506"/>
+			<NumericPredictor name="standardScaler(petal length (cm))" coefficient="-1.9306286585787176"/>
+			<NumericPredictor name="standardScaler(petal width (cm))" coefficient="-1.811688725962776"/>
 		</RegressionTable>
-		<RegressionTable intercept="2.074865246085572" targetCategory="1">
-			<NumericPredictor name="standardScaler(sepal length (cm))" coefficient="0.5878005069939082"/>
-			<NumericPredictor name="standardScaler(sepal width (cm))" coefficient="-0.3618237688810136"/>
-			<NumericPredictor name="standardScaler(petal length (cm))" coefficient="-0.36346274208575496"/>
-			<NumericPredictor name="standardScaler(petal width (cm))" coefficient="-0.8261928890080615"/>
+		<RegressionTable intercept="2.074865246085573" targetCategory="1">
+			<NumericPredictor name="standardScaler(sepal length (cm))" coefficient="0.5878005069939087"/>
+			<NumericPredictor name="standardScaler(sepal width (cm))" coefficient="-0.3618237688810135"/>
+			<NumericPredictor name="standardScaler(petal length (cm))" coefficient="-0.3634627420857542"/>
+			<NumericPredictor name="standardScaler(petal width (cm))" coefficient="-0.8261928890080613"/>
 		</RegressionTable>
-		<RegressionTable intercept="-1.8695484363862909" targetCategory="2">
-			<NumericPredictor name="standardScaler(sepal length (cm))" coefficient="0.48624097884210715"/>
+		<RegressionTable intercept="-1.8695484363862886" targetCategory="2">
+			<NumericPredictor name="standardScaler(sepal length (cm))" coefficient="0.4862409788421077"/>
 			<NumericPredictor name="standardScaler(sepal width (cm))" coefficient="-0.798239652766937"/>
-			<NumericPredictor name="standardScaler(petal length (cm))" coefficient="2.294091400664473"/>
-			<NumericPredictor name="standardScaler(petal width (cm))" coefficient="2.6378816149708375"/>
+			<NumericPredictor name="standardScaler(petal length (cm))" coefficient="2.2940914006644726"/>
+			<NumericPredictor name="standardScaler(petal width (cm))" coefficient="2.637881614970838"/>
 		</RegressionTable>
 	</RegressionModel>
 </PMML>
