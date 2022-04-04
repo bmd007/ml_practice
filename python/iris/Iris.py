@@ -10,11 +10,11 @@ if __name__ == '__main__':
     features = data['data']
     target = data['target']
 
-    # Features
-    features.head()
+    print("Features")
+    print(features.head())
 
-    # Target
-    target.head()
+    print("Target")
+    print(target.head())
 
     pipeline = PMMLPipeline([('scaler', preprocessing.StandardScaler()), ('classifier', LogisticRegression())])
     pipeline.fit(features, target)
